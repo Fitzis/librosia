@@ -1,0 +1,47 @@
+site_name: Informatica per SIA
+site_description: Libro di informatica per il percorso SIA
+# site_url: https://TUOUTENTE.github.io/libro-sia/   # scommenta dopo il primo deploy
+
+theme:
+  name: material
+  language: it
+  palette:
+    # tema chiaro/scuro con interruttore
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      toggle:
+        icon: material/weather-night
+        name: Passa al tema scuro
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Passa al tema chiaro
+  features:
+    - navigation.footer      # pulsanti capitolo precedente/successivo
+    - navigation.top         # torna su
+    - search.suggest
+    - search.highlight
+    - content.code.copy      # pulsante copia sui blocchi di codice
+
+markdown_extensions:
+  - admonition               # i box del libro
+  - pymdownx.details         # box collassabili (risposte nascoste)
+  - pymdownx.superfences     # codice dentro i box
+  - pymdownx.highlight
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+      toc_depth: 3
+
+nav:
+  - Home: index.md
+  - Capitolo 5 - SQL: capitolo-5.md
+  - Capitolo 7 - Le reti di computer: capitolo-7.md
+
+plugins:
+  - search:
+      lang: it
