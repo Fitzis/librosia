@@ -1,0 +1,122 @@
+/* ===================================================================
+   Design system del libro — riproduce lo stile storico di Google Docs
+   =================================================================== */
+
+/* ---- Titoli: Helvetica Neue, colore del libro ---- */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #134f5c;
+  font-weight: 700;
+}
+[data-md-color-scheme="slate"] .md-typeset h1,
+[data-md-color-scheme="slate"] .md-typeset h2,
+[data-md-color-scheme="slate"] .md-typeset h3,
+[data-md-color-scheme="slate"] .md-typeset h4,
+[data-md-color-scheme="slate"] .md-typeset h5 {
+  color: #7fc4d4; /* variante leggibile su tema scuro */
+}
+
+/* ---- Box: etichetta verticale sul fianco sinistro ---- */
+.md-typeset .admonition {
+  position: relative;
+  padding-left: 2.4rem;          /* spazio per l'etichetta verticale */
+  border-width: 1px;
+  border-radius: 3px;
+  font-size: inherit;
+}
+.md-typeset .admonition > .admonition-title {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2rem;
+  margin: 0;
+  padding: 0.3rem 0.15rem;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  border-right: 1px solid currentColor;
+}
+/* niente icona: nel libro l'etichetta è solo testo */
+.md-typeset .admonition > .admonition-title::before {
+  display: none;
+}
+
+/* I box collassabili (risposte nascoste) restano orizzontali,
+   così la freccia e il click funzionano normalmente */
+.md-typeset details {
+  border-width: 1px;
+}
+
+/* ---- Palette dei box ----
+   Definizione: colori esatti dallo screenshot di Google Docs.
+   Gli altri: palette provvisoria — sostituire con i codici colore
+   originali del documento quando disponibili.                    */
+
+/* Definizione */
+.md-typeset .admonition.abstract {
+  background-color: #c9daf8;
+  border-color: #1c4587;
+}
+.md-typeset .abstract > .admonition-title { color: #1c4587; background: none; }
+
+/* Sintassi */
+.md-typeset .admonition.info {
+  background-color: #ede7f6;
+  border-color: #5e35b1;
+}
+.md-typeset .info > .admonition-title { color: #5e35b1; background: none; }
+
+/* Esempio */
+.md-typeset .admonition.example {
+  background-color: #e8f5e9;
+  border-color: #2e7d32;
+}
+.md-typeset .example > .admonition-title { color: #2e7d32; background: none; }
+
+/* Approfondimento / Osservazione */
+.md-typeset .admonition.note {
+  background-color: #f5f5f5;
+  border-color: #757575;
+}
+.md-typeset .note > .admonition-title { color: #555555; background: none; }
+
+/* Curiosità */
+.md-typeset .admonition.tip {
+  background-color: #fff8e1;
+  border-color: #f9a825;
+}
+.md-typeset .tip > .admonition-title { color: #b28704; background: none; }
+
+/* Attenzione */
+.md-typeset .admonition.warning {
+  background-color: #ffebee;
+  border-color: #c62828;
+}
+.md-typeset .warning > .admonition-title { color: #c62828; background: none; }
+
+/* Esercizio - Prova tu! */
+.md-typeset .admonition.question {
+  background-color: #e0f2f1;
+  border-color: #00695c;
+}
+.md-typeset .question > .admonition-title { color: #00695c; background: none; }
+
+/* ---- Tema scuro: sfondi attenuati, stessi colori identificativi ---- */
+[data-md-color-scheme="slate"] .md-typeset .admonition.abstract { background-color: rgba(28, 69, 135, 0.25); }
+[data-md-color-scheme="slate"] .md-typeset .admonition.info     { background-color: rgba(94, 53, 177, 0.20); }
+[data-md-color-scheme="slate"] .md-typeset .admonition.example  { background-color: rgba(46, 125, 50, 0.20); }
+[data-md-color-scheme="slate"] .md-typeset .admonition.note     { background-color: rgba(117, 117, 117, 0.20); }
+[data-md-color-scheme="slate"] .md-typeset .admonition.tip      { background-color: rgba(249, 168, 37, 0.15); }
+[data-md-color-scheme="slate"] .md-typeset .admonition.warning  { background-color: rgba(198, 40, 40, 0.20); }
+[data-md-color-scheme="slate"] .md-typeset .admonition.question { background-color: rgba(0, 105, 92, 0.20); }
+[data-md-color-scheme="slate"] .md-typeset .admonition-title    { filter: brightness(1.6); }
