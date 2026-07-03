@@ -1,5 +1,6 @@
 /* ===================================================================
-   Design system del libro — riproduce lo stile storico di Google Docs
+   Design system del libro — v2
+   Box a due toni con etichetta verticale (stile Google Docs storico)
    =================================================================== */
 
 /* ---- Titoli: Helvetica Neue, colore del libro ---- */
@@ -17,106 +18,99 @@
 [data-md-color-scheme="slate"] .md-typeset h3,
 [data-md-color-scheme="slate"] .md-typeset h4,
 [data-md-color-scheme="slate"] .md-typeset h5 {
-  color: #7fc4d4; /* variante leggibile su tema scuro */
+  color: #7fc4d4;
 }
 
-/* ---- Box: etichetta verticale sul fianco sinistro ---- */
+/* ---- Struttura dei box: griglia a due colonne ----
+   Colonna 1 = striscia dell'etichetta (tono scuro)
+   Colonna 2 = contenuto (tono chiaro)
+   L'etichetta verticale occupa tutte le righe: il box non può mai
+   essere più basso della scritta, qualunque sia il contenuto.     */
 .md-typeset .admonition {
-  position: relative;
-  padding-left: 2.4rem;          /* spazio per l'etichetta verticale */
+  display: grid;
+  grid-template-columns: 2.1rem 1fr;
+  padding: 0;
   border-width: 1px;
   border-radius: 3px;
+  overflow: hidden;
   font-size: inherit;
 }
 .md-typeset .admonition > .admonition-title {
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 2rem;
+  grid-column: 1;
+  grid-row: 1 / span 99;
   margin: 0;
-  padding: 0.3rem 0.15rem;
+  padding: 0.7rem 0.2rem;
   writing-mode: vertical-rl;
   transform: rotate(180deg);
   display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  align-items: center;        /* centrata nella larghezza della striscia */
+  justify-content: flex-end;  /* dopo la rotazione = ancorata in alto */
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 700;
-  border-right: 1px solid currentColor;
+  border-left: 1px solid rgba(0, 0, 0, 0.35); /* dopo la rotazione = separatore a destra della striscia */
 }
-/* niente icona: nel libro l'etichetta è solo testo */
 .md-typeset .admonition > .admonition-title::before {
-  display: none;
+  display: none; /* niente icona: solo testo, come nel libro */
+}
+/* tutto il contenuto va nella colonna 2, con il suo respiro */
+.md-typeset .admonition > *:not(.admonition-title) {
+  grid-column: 2;
+  margin: 0.55rem 0.9rem;
+}
+.md-typeset .admonition > *:not(.admonition-title) + *:not(.admonition-title) {
+  margin-top: 0;
 }
 
-/* I box collassabili (risposte nascoste) restano orizzontali,
-   così la freccia e il click funzionano normalmente */
+/* I box collassabili (risposte nascoste) restano orizzontali */
 .md-typeset details {
   border-width: 1px;
 }
 
-/* ---- Palette dei box ----
-   Definizione: colori esatti dallo screenshot di Google Docs.
-   Gli altri: palette provvisoria — sostituire con i codici colore
-   originali del documento quando disponibili.                    */
+/* ---- Palette: striscia (scura) + contenuto (chiaro) ----
+   Definizione: colori esatti forniti dall'autore.
+   Altri tipi: coppie provvisorie sulla stessa logica a due toni,
+   da sostituire con i colori originali quando disponibili.        */
 
 /* Definizione */
-.md-typeset .admonition.abstract {
-  background-color: #c9daf8;
-  border-color: #1c4587;
-}
-.md-typeset .abstract > .admonition-title { color: #1c4587; background: none; }
+.md-typeset .admonition.abstract { background-color: #c9daf8; border-color: #1c4587; }
+.md-typeset .abstract > .admonition-title { background-color: #a4c2f4; color: #103a6e; }
 
 /* Sintassi */
-.md-typeset .admonition.info {
-  background-color: #ede7f6;
-  border-color: #5e35b1;
-}
-.md-typeset .info > .admonition-title { color: #5e35b1; background: none; }
+.md-typeset .admonition.info { background-color: #ede7f6; border-color: #5e35b1; }
+.md-typeset .info > .admonition-title { background-color: #d1c4e9; color: #4527a0; }
 
 /* Esempio */
-.md-typeset .admonition.example {
-  background-color: #e8f5e9;
-  border-color: #2e7d32;
-}
-.md-typeset .example > .admonition-title { color: #2e7d32; background: none; }
+.md-typeset .admonition.example { background-color: #e8f5e9; border-color: #2e7d32; }
+.md-typeset .example > .admonition-title { background-color: #c8e6c9; color: #1b5e20; }
 
 /* Approfondimento / Osservazione */
-.md-typeset .admonition.note {
-  background-color: #f5f5f5;
-  border-color: #757575;
-}
-.md-typeset .note > .admonition-title { color: #555555; background: none; }
+.md-typeset .admonition.note { background-color: #f5f5f5; border-color: #757575; }
+.md-typeset .note > .admonition-title { background-color: #e0e0e0; color: #424242; }
 
 /* Curiosità */
-.md-typeset .admonition.tip {
-  background-color: #fff8e1;
-  border-color: #f9a825;
-}
-.md-typeset .tip > .admonition-title { color: #b28704; background: none; }
+.md-typeset .admonition.tip { background-color: #fff8e1; border-color: #f9a825; }
+.md-typeset .tip > .admonition-title { background-color: #ffecb3; color: #8a6d00; }
 
 /* Attenzione */
-.md-typeset .admonition.warning {
-  background-color: #ffebee;
-  border-color: #c62828;
-}
-.md-typeset .warning > .admonition-title { color: #c62828; background: none; }
+.md-typeset .admonition.warning { background-color: #ffebee; border-color: #c62828; }
+.md-typeset .warning > .admonition-title { background-color: #ffcdd2; color: #b71c1c; }
 
 /* Esercizio - Prova tu! */
-.md-typeset .admonition.question {
-  background-color: #e0f2f1;
-  border-color: #00695c;
-}
-.md-typeset .question > .admonition-title { color: #00695c; background: none; }
+.md-typeset .admonition.question { background-color: #e0f2f1; border-color: #00695c; }
+.md-typeset .question > .admonition-title { background-color: #b2dfdb; color: #004d40; }
 
-/* ---- Tema scuro: sfondi attenuati, stessi colori identificativi ---- */
+/* ---- Tema scuro: sfondi attenuati, strisce riconoscibili ---- */
 [data-md-color-scheme="slate"] .md-typeset .admonition.abstract { background-color: rgba(28, 69, 135, 0.25); }
-[data-md-color-scheme="slate"] .md-typeset .admonition.info     { background-color: rgba(94, 53, 177, 0.20); }
-[data-md-color-scheme="slate"] .md-typeset .admonition.example  { background-color: rgba(46, 125, 50, 0.20); }
-[data-md-color-scheme="slate"] .md-typeset .admonition.note     { background-color: rgba(117, 117, 117, 0.20); }
-[data-md-color-scheme="slate"] .md-typeset .admonition.tip      { background-color: rgba(249, 168, 37, 0.15); }
-[data-md-color-scheme="slate"] .md-typeset .admonition.warning  { background-color: rgba(198, 40, 40, 0.20); }
+[data-md-color-scheme="slate"] .md-typeset .abstract > .admonition-title { background-color: rgba(164, 194, 244, 0.30); color: #c9daf8; }
+[data-md-color-scheme="slate"] .md-typeset .admonition.info { background-color: rgba(94, 53, 177, 0.20); }
+[data-md-color-scheme="slate"] .md-typeset .info > .admonition-title { background-color: rgba(209, 196, 233, 0.25); color: #ede7f6; }
+[data-md-color-scheme="slate"] .md-typeset .admonition.example { background-color: rgba(46, 125, 50, 0.20); }
+[data-md-color-scheme="slate"] .md-typeset .example > .admonition-title { background-color: rgba(200, 230, 201, 0.25); color: #e8f5e9; }
+[data-md-color-scheme="slate"] .md-typeset .admonition.note { background-color: rgba(117, 117, 117, 0.20); }
+[data-md-color-scheme="slate"] .md-typeset .note > .admonition-title { background-color: rgba(224, 224, 224, 0.25); color: #f5f5f5; }
+[data-md-color-scheme="slate"] .md-typeset .admonition.tip { background-color: rgba(249, 168, 37, 0.15); }
+[data-md-color-scheme="slate"] .md-typeset .tip > .admonition-title { background-color: rgba(255, 236, 179, 0.25); color: #fff8e1; }
+[data-md-color-scheme="slate"] .md-typeset .admonition.warning { background-color: rgba(198, 40, 40, 0.20); }
+[data-md-color-scheme="slate"] .md-typeset .warning > .admonition-title { background-color: rgba(255, 205, 210, 0.25); color: #ffebee; }
 [data-md-color-scheme="slate"] .md-typeset .admonition.question { background-color: rgba(0, 105, 92, 0.20); }
-[data-md-color-scheme="slate"] .md-typeset .admonition-title    { filter: brightness(1.6); }
+[data-md-color-scheme="slate"] .md-typeset .question > .admonition-title { background-color: rgba(178, 223, 219, 0.25); color: #e0f2f1; }
