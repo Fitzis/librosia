@@ -1,0 +1,3084 @@
+
+<!doctype html>
+<html lang="it" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Libro di informatica per il percorso SIA">
+      
+      
+      
+      
+        <link rel="prev" href="../capitolo-5/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Capitolo 7 - Le reti di computer - Informatica per SIA</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#capitolo-7-le-reti-di-computer" class="md-skip">
+          Vai al contenuto
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Intestazione">
+    <a href=".." title="Informatica per SIA" class="md-header__button md-logo" aria-label="Informatica per SIA" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Informatica per SIA
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Capitolo 7 - Le reti di computer
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Passa al tema scuro"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Passa al tema scuro" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="indigo"  aria-label="Passa al tema chiaro"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Passa al tema chiaro" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Cancella" aria-label="Cancella" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inizializza la ricerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigazione" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Informatica per SIA" class="md-nav__button md-logo" aria-label="Informatica per SIA" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Informatica per SIA
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../capitolo-5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capitolo 5 - SQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capitolo 7 - Le reti di computer
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Capitolo 7 - Le reti di computer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#70-introduzione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.0 Introduzione
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.0 Introduzione">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definizione-di-rete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definizione di rete
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#71-i-componenti-di-una-rete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 I componenti di una rete
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.1 I componenti di una rete">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#711-gli-host" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1.1 Gli host
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#712-i-dispositivi-di-rete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1.2 I dispositivi di rete
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#713-i-mezzi-di-collegamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1.3 I mezzi di collegamento
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#71-domande-di-comprensione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1. Domande di comprensione
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#72-reti-aziendali-e-la-rete-internet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Reti aziendali e la rete Internet
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.2 Reti aziendali e la rete Internet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#721-la-rete-aziendale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2.1 La rete aziendale
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#722-la-rete-internet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2.2 La rete internet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visita-di-un-sito-web-il-percorso-completo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visita di un sito web: il percorso completo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#723-server-in-locale-vs-server-in-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2.3 Server in locale VS Server in Cloud
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.2.3 Server in locale VS Server in Cloud">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#il-server-in-locale-in-house" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Il Server in Locale (In-house)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#il-server-in-cloud-cloud-computing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Il Server in Cloud (Cloud Computing)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#confronto-diretto-locale-vs-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Confronto Diretto: Locale vs. Cloud
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#72-domande-di-comprensione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2. Domande di comprensione
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#73-i-protocolli-di-internet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 I protocolli di internet
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.3 I protocolli di internet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#731-isoosi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.1 ISO/OSI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#732-tcpip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.2 TCP/IP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-domande-di-comprensione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3. Domande di comprensione
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Indice">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Indice
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#70-introduzione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.0 Introduzione
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.0 Introduzione">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#definizione-di-rete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Definizione di rete
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#71-i-componenti-di-una-rete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 I componenti di una rete
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.1 I componenti di una rete">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#711-gli-host" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1.1 Gli host
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#712-i-dispositivi-di-rete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1.2 I dispositivi di rete
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#713-i-mezzi-di-collegamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1.3 I mezzi di collegamento
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#71-domande-di-comprensione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1. Domande di comprensione
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#72-reti-aziendali-e-la-rete-internet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Reti aziendali e la rete Internet
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.2 Reti aziendali e la rete Internet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#721-la-rete-aziendale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2.1 La rete aziendale
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#722-la-rete-internet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2.2 La rete internet
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visita-di-un-sito-web-il-percorso-completo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Visita di un sito web: il percorso completo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#723-server-in-locale-vs-server-in-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2.3 Server in locale VS Server in Cloud
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.2.3 Server in locale VS Server in Cloud">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#il-server-in-locale-in-house" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Il Server in Locale (In-house)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#il-server-in-cloud-cloud-computing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Il Server in Cloud (Cloud Computing)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#confronto-diretto-locale-vs-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Confronto Diretto: Locale vs. Cloud
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#72-domande-di-comprensione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2. Domande di comprensione
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#73-i-protocolli-di-internet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 I protocolli di internet
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7.3 I protocolli di internet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#731-isoosi" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.1 ISO/OSI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#732-tcpip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3.2 TCP/IP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-domande-di-comprensione" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3. Domande di comprensione
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="capitolo-7-le-reti-di-computer">Capitolo 7: le reti di computer<a class="headerlink" href="#capitolo-7-le-reti-di-computer" title="Permanent link">&para;</a></h1>
+<p><img alt="" src="../img/cap07/media/image12.png" /></p>
+<h2 id="70-introduzione">7.0 Introduzione<a class="headerlink" href="#70-introduzione" title="Permanent link">&para;</a></h2>
+<p>In questo capitolo affronteremo la struttura delle reti di computer.</p>
+<p>Il nostro obiettivo è comprendere il funzionamento di internet e della tecnologia che tutti i giorni ci permette di mandare email, messaggi su Whatsapp, guardare Netflix, fare pagamenti online, ecc…</p>
+<p>In un mondo in cui anche il frigorifero si può connettere ad internet diventa di fondamentale importanza comprendere come funziona!</p>
+<p>Il nostro percorso si articolerà in tre fasi:</p>
+<ol>
+<li>
+<p><strong>Capitolo 7.1</strong> <a href="#i-componenti-di-una-rete"><u>I componenti di una rete.</u></a><br />
+    Come si realizza una rete di computer dal punto di vista fisico/dell'infrastruttura? Vedremo quindi quali sono i componenti di una rete, esplorando gli <strong>apparati e i mezzi di trasmissione necessari</strong> a realizzarla.</p>
+</li>
+<li>
+<p><strong>Capitolo 7.2</strong> <a href="#reti-aziendali-e-la-rete-internet"><u>Internet e reti aziendali</u></a><br />
+    Dopo aver visto quali sono i componenti, vediamo come questi sono utilizzati per creare una rete aziendale che risponda alle esigenze e come in generale vengano sfruttate per realizzare la rete globale, internet.</p>
+</li>
+<li>
+<p><strong>Capitolo 7.3</strong> <a href="#i-protocolli-di-internet"><u>I protocolli di internet</u></a><br />
+    Come viaggiano le informazioni sulla rete? Vedremo i <strong>protocolli</strong> che regolano la trasmissione dei dati.</p>
+</li>
+</ol>
+<h3 id="definizione-di-rete">Definizione di rete<a class="headerlink" href="#definizione-di-rete" title="Permanent link">&para;</a></h3>
+<p>Partiamo dalla definizione:</p>
+<div class="admonition abstract">
+<p class="admonition-title">Definizione</p>
+<p>Le reti di computer (network) consistono in due o più elaboratori connessi tra loro per <strong>condividere risorse</strong> (come stampanti e file), <strong>scambiare informazioni o servizi.</strong></p>
+</div>
+<p><strong>N.B.</strong> Nella definizione si parla esplicitamente di rete di <strong><u>computer</u>.</strong><br />
+Con l'evoluzione della tecnologia non sono più solo i computer ad essere connessi alla rete: abbiamo smartphone, laptop, stampanti, televisori, telecamere, termostati. Si parla adesso di <strong>Internet of Things (IoT)</strong>.</p>
+<p>Teniamo quindi presente che mentre nella trattazione parleremo principalmente di computer, questi potranno essere <u>qualunque tipo di dispositivo che si può connettere in rete</u>.</p>
+<p>Ognuno di questi dispositivi viene più generalmente chiamato <strong>host.</strong></p>
+<h2 id="71-i-componenti-di-una-rete">7.1 I componenti di una rete<a class="headerlink" href="#71-i-componenti-di-una-rete" title="Permanent link">&para;</a></h2>
+<p><img alt="" src="../img/cap07/media/image7.png" />
+Vediamo quali sono i componenti principali di una rete di computer</p>
+<div class="admonition abstract">
+<p class="admonition-title">Definizione</p>
+<p><strong>I componenti principali delle reti</strong></p>
+<p>I protagonisti principali della nostra rete di computer sono:</p>
+<ul>
+<li>
+<p>Gli <strong>host</strong> (o endpoint), sono gli utilizzatori finali della rete: computer, laptop, stampanti, videocamere, televisori, client, server, ecc…</p>
+</li>
+<li>
+<p>I <strong>dispositivi di rete</strong>, ovvero gli apparati che permettono la creazione e il funzionamento della rete. Tra questi troviamo switch, access point, router, modem, ecc…</p>
+</li>
+<li>
+<p>I <strong>mezzi di collegamento,</strong> ovvero gli strumenti attraverso cui vengono trasmesse le informazioni. Tra questi troviamo: cavi (cavo ethernet, fibra ottica, ADSL) e senza cavo (Wi-Fi, bluetooth, satellitare, dati mobili, ecc…)</p>
+</li>
+</ul>
+</div>
+<p>Vediamoli nel dettaglio:</p>
+<h3 id="711-gli-host">7.1.1 Gli host<a class="headerlink" href="#711-gli-host" title="Permanent link">&para;</a></h3>
+<p>Gli host, conosciuti anche come endpoint, sono i dispositivi utilizzatori finali all'interno di una rete. Questi includono:</p>
+<ul>
+<li>
+<p><strong>Computer e Laptop</strong>: Utilizzati dagli utenti per accedere alle risorse di rete, navigare su Internet, eseguire applicazioni e comunicare.</p>
+</li>
+<li>
+<p><strong>Stampanti di Rete</strong>: Permettono a più utenti di condividere una singola stampante, migliorando l'efficienza e riducendo i costi.</p>
+</li>
+<li>
+<p><strong>Videocamere e Televisori Connessi:</strong> Offrono servizi di sorveglianza e intrattenimento attraverso la rete.</p>
+</li>
+</ul>
+<p>Per potersi connettere alla rete, ognuno di questi dispositivi ha bisogno di avere una <strong>scheda di rete</strong> che nella maggior parte dei computer è integrata già nella scheda madre.</p>
+<div class="admonition abstract">
+<p class="admonition-title">Definizione</p>
+<p>La <strong>scheda di rete</strong> è un componente hardware che è provvisto di una porta (nel caso di connessioni cablate) o un antenna (nel caso di connessioni wireless) e che è in grado di gestire lo scambio di dati con la rete.  </p>
+<p>Nell'immagine vediamo una scheda di rete con porta Ethernet<img alt="" src="../img/cap07/media/image4.png" /></p>
+</div>
+<h4 id="identificazione-degli-host-sulla-rete">Identificazione degli host sulla rete<a class="headerlink" href="#identificazione-degli-host-sulla-rete" title="Permanent link">&para;</a></h4>
+<p>Per poter individuare e distinguere gli host sulla rete e poter quindi gestire in maniera ordinata il traffico di dati abbiamo bisogno di identificatori che permettano di indirizzare in maniera univoca i messaggi. Abbiamo due diversi indirizzi: l'indirizzo MAC e l'indirizzo IP.</p>
+<h5 id="indirizzo-mac">Indirizzo MAC<a class="headerlink" href="#indirizzo-mac" title="Permanent link">&para;</a></h5>
+<div class="admonition abstract">
+<p class="admonition-title">Definizione</p>
+<p>L'<strong>indirizzo MAC</strong> (MAC address) è un indirizzo <strong>univoco</strong> assegnato<br />
+ad ogni scheda di rete dal produttore al momento della fabbricazione della stessa.  </p>
+<p>L'indirizzo MAC viene detto anche <strong>indirizzo fisico</strong> perché identifica in maniera univoca un componente fisico (la scheda di rete) e viene utilizzato nelle reti locali per poter individuare un determinato computer.</p>
+</div>
+<p>In un certo senso l'indirizzo MAC rappresenta per una scheda di rete quello che il codice fiscale rappresenta per un cittadino: non possono esistere due schede di rete con lo stesso indirizzo MAC (in tutto il mondo!).</p>
+<div class="admonition abstract">
+<p class="admonition-title">Definizione</p>
+<p><strong>Approfondimento</strong><br />
+Il MAC address ha la forma di 12 cifre esadecimali (da 0 ad F) separate da un trattino ogni 2 cifre.<br />
+Esempio: 00-B0-D0-63-C2-26.</p>
+</div>
+<p>Sulla rete internet tutte le comunicazioni avvengono tramite il protocollo TCP/IP (più dettagli nel <a href="#tcpip"><u>capitolo dedicato</u></a>). Per poter utilizzare questo protocollo e poter ricevere le comunicazioni, ogni dispositivo connesso in rete ha un <strong>indirizzo IP (Internet Protocol</strong></p>
+<h5 id="indirizzo-ip">Indirizzo IP<a class="headerlink" href="#indirizzo-ip" title="Permanent link">&para;</a></h5>
+<p>Riportiamo qui solo le informazioni fondamentali sugli indirizzi IP necessari per capire le strutture delle reti. Maggiori dettagli si trovano nel capitolo dedicato al <a href="#internet"><u>livello IP</u></a> del protocollo TCP/IP.</p>
+<p>Esistono due versioni di indirizzi IP, IPv4 e IPv6. Parleremo qui dell'IPv4.</p>
+<div class="admonition abstract">
+<p class="admonition-title">Definizione</p>
+<p><strong>Un indirizzo IP</strong> è un numero che identifica in maniera univoca un host connesso ad una rete informatica.</p>
+<blockquote>
+<p><strong>Nella versione IPv4</strong> l'indirizzo è costituito da 4 numeri da 0 a 255 separati da un punto.  </p>
+</blockquote>
+<p><em>Esempio: 192.168.0.2 è un indirizzo IPv4 ben formato, come 10.25.250.25</em></p>
+</div>
+<p><strong>N.B.</strong> Mentre il MAC Address è <strong>univoco per ogni scheda di rete</strong> ed è una caratteristica intrinseca del dispositivo, l'indirizzo IP è un indirizzo che <strong>viene assegnato all'host</strong> quando si connette alla rete.</p>
+<p>Quindi:</p>
+<ul>
+<li>
+<p>il <strong>MAC address</strong> esiste anche se il <strong>dispositivo è disconnesso</strong> ed è un indirizzo fissato.</p>
+</li>
+<li>
+<p><strong>L'indirizzo IP</strong> viene assegnato solo se il <strong>dispositivo si connette</strong> e può variare se ci si connette su diverse reti o anche sulla stessa rete in momenti diversi.</p>
+</li>
+</ul>
+<div class="admonition abstract">
+<p class="admonition-title">Definizione</p>
+<p>**Approfondimento - il comando ipconfig  </p>
+<p><strong>Su macchine con il sistema operativo Windows è possibile scoprire l'indirizzo IP assegnato ad ogni scheda di rete del proprio computer utilizzando nel <em>Prompt dei comandi</em> il comando </strong>ipconfig**</p>
+<blockquote>
+<p>Se vogliamo vedere anche il MAC Address delle schede possiamo utilizzare il comando <strong>ipconfig /all</strong></p>
+<p>Su sistemi operativi Linux e Mac il comando è invece <strong>ifconfig</strong></p>
+</blockquote>
+</div>
+<h6 id="assegnazione-degli-indirizzi-ip">Assegnazione degli indirizzi IP<a class="headerlink" href="#assegnazione-degli-indirizzi-ip" title="Permanent link">&para;</a></h6>
+<p>Come viene assegnato un indirizzo IP ai dispositivi in rete?<br />
+Esistono due modalità:</p>
+<ul>
+<li>
+<p><strong>Assegnazione statica degli indirizzi IP</strong>: l'amministratore della rete assegna ad ogni dispositivo nella rete un <strong>indirizzo IP fisso</strong>.<br />
+  Associa ad ogni MAC address un indirizzo IP, in modo che quando questo si collega riceverà sempre lo stesso indirizzo IP.</p>
+</li>
+<li>
+<p><strong>DHCP (Assegnazione dinamica degli indirizzi IP)</strong>: esiste un servizio (di solito è integrato nel router) che automaticamente fornisce ai dispositivi che si connettono alla rete un indirizzo IP.</p>
+</li>
+</ul>
+<div class="admonition abstract">
+<p class="admonition-title">Definizione</p>
+<p>Nel laboratorio d'informatica della scuola ciascuno dei 18 computer si collega sempre con lo stesso indirizzo IP. Ad esempio il PC numero 1 si collega con l'indirizzo 192.168.201.1, il 2 con 192.168.201.2<br />
+<strong>Questo è un esempio di assegnazione statica</strong></p>
+<p>Nelle nostre reti domestiche solitamente non abbiamo configurato gli indirizzi IP in modo statico, quindi quando il nostro smartphone si connette riceve automaticamente dal router il primo indirizzo IP disponibile. Esempio: 192.168.0.4.<br />
+La prossima volta che il nostro smartphone si connette potrebbe non trovare libero quell'indirizzo IP e potrebbe essergli assegnato ad esempio 192.168.0.5.<br />
+<strong>Questo è un esempio di DHCP</strong></p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Definizione</p>
+<p><strong>Approfondimento - Risorsa video<br />
+</strong><u>Il DHCP spiegato molto bene</u></p>
+<blockquote>
+<p><a href="https://youtu.be/e6-TaH5bkjo?si=1D5_u2ct6R2WCpEP"><u>DHCP Explained - Dynamic Host Configuration Protocol</u></a>(10:09)<br />
+<u>Il video è in inglese, mettete i sottotitoli</u></p>
+</blockquote>
+</div>
+<p>La scelta della modalità di assegnazione degli indirizzi IP è dettata da diversi fattori, uno di questi è il <strong>ruolo</strong> che l'host ricopre nella rete. I due ruoli principali che un host può ricoprire sono <strong>Client</strong> e <strong>Server:</strong></p>
+<h4 id="client-e-server">Client e Server<a class="headerlink" href="#client-e-server" title="Permanent link">&para;</a></h4>
+<p>Distinguiamo tra client e server in base al ruolo che il dispositivo ricopre nella rete</p>
+<div class="admonition abstract">
+<p class="admonition-title">Definizione</p>
+<p>Un <strong>server</strong> è un dispositivo che mette a disposizione delle risorse sulla rete.</p>
+<blockquote>
+<p>Un <strong>client</strong> è un dispositivo che accede alle risorse di un server tramite la rete.</p>
+</blockquote>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Definizione</p>
+<p>Youtube ha diversi <strong>server</strong> su cui ospita tutta l'infrastruttura per mettere a disposizione degli utenti lo streaming di video.</p>
+<p>Quando noi apriamo il nostro dispositivo e ci colleghiamo a Youtube, il nostro dispositivo è un <strong>client</strong> che fa la richiesta al server e ottiene la risorsa cercata.</p>
+</div>
+<p>Come si può notare dalla definizione il server e il client non sono delle tipologie particolari di dispositivo. Come già detto, i termini denotano piuttosto un <strong>ruolo</strong> che il dispositivo ricoprono nella rete.</p>
+<p>In particolare il client riveste un ruolo <strong>attivo</strong>: è il client a iniziare la comunicazione richiedendo le risorse al server.<br />
+Il server riveste un ruolo <strong>passivo</strong>: rimane in attesa e risponde alle richieste dei client.</p>
+<p><u>Solitamente il server è un computer molto potente</u> in grado di gestire tante richieste contemporaneamente, ma qualunque dispositivo potrebbe essere un server, se configurato per tale scopo.</p>
+<p>In base al servizio offerto si parla di diverse tipologie di server. Alcune sono :</p>
+<ul>
+<li>
+<p><strong>Server Web:</strong> Server che ospita un sito web e restituisce il sito web richiesto dall'utente. Di solito l'utente si collega a un server web utilizzando un browser sul proprio client.</p>
+</li>
+<li>
+<p><strong>Server Database:</strong> è un server che ospita un database e risponde alle richieste degli utenti che possono interagire tramite interfaccia o tramite query SQL.</p>
+</li>
+<li>
+<p><strong>Server VPN:</strong> è un server che consente il collegamento tramite VPN.</p>
+</li>
+<li>
+<p><strong>Server DNS:</strong> fornisce il servizio di Domain Name System. Solitamente questo è fornito dal proprio ISP, ma si possono utilizzare server <a href="#dns-domain-name-system"><u>DNS</u></a> di altri operatori</p>
+</li>
+<li>
+<p><strong>Server di Applicazioni:</strong> supporta l'esecuzione di applicazioni specifiche. Quello di Youtube prima è un esempio, ma un altro esempio potrebbe essere il server per i videogiochi online</p>
+</li>
+</ul>
+<div class="admonition abstract">
+<p class="admonition-title">Definizione</p>
+<p><strong>Osservazione: modalità di assegnazione degli indirizzi IP in base al ruolo</strong></p>
+<p><strong>Un server</strong> <strong>deve essere sempre raggiungibile e rintracciabile sulla rete,</strong> gli altri host devono conoscere con certezza l'indirizzo IP a cui trovarlo. Per un server l'indirizzo IP <u>non può variare</u> ad ogni collegamento.</p>
+<p>Dall'altra parte abbiamo i <strong>client</strong> che si connettono in rete come utilizzatori, per loro non è necessario mantenere un IP fisso e riconoscibile.</p>
+<p>In fase di assegnazione quindi:</p>
+<ul>
+<li>
+<p>Per un <strong>server</strong> è fondamentale utilizzare <strong>l'assegnazione statica degli indirizzi</strong></p>
+</li>
+<li>
+<p>Per i <strong>client</strong> è possibile e spesso comodo utilizzare <strong>l'assegnazione dinamica degli indirizzi IP</strong> (DHCP).</p>
+</li>
+</ul>
+</div>
+<h3 id="712-i-dispositivi-di-rete">7.1.2 I dispositivi di rete<a class="headerlink" href="#712-i-dispositivi-di-rete" title="Permanent link">&para;</a></h3>
+<p><span class="mark">I dispositivi di rete facilitano la creazione, la gestione e il funzionamento delle reti. Tra questi troviamo:</span></p>
+<h4 id="switch">Switch<a class="headerlink" href="#switch" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="../img/cap07/media/image62.png" />
+Lo switch di rete è un dispositivo fondamentale nelle reti informatiche e <strong>permette di connettere tra loro diversi computer tramite cavo ethernet</strong>.</p>
+<p>Ogni switch è dotato di un numero di porte che caratterizza il <strong>massimo numero di dispositivi</strong> che possono essere collegati contemporaneamente.</p>
+<div class="admonition info">
+<p class="admonition-title">Sintassi - Il numero di porte è cruciale</p>
+<p><strong>Il numero di porte è cruciale</strong><br />
+Se ad esempio ho bisogno di connettere fra loro 10 dispositivi, dovrò assicurarmi di avere a disposizione uno switch che abbia almeno 10 porte</p>
+</div>
+<!-- REVIEW: tipo di box da confermare -->
+
+<p>Lo switch è un dispositivo "intelligente", riconosce i dispositivi connessi nella rete ed è in grado di inviare il messaggio <strong>esclusivamente al destinatario</strong>. Per farlo utilizza il MAC address del dispositivo.</p>
+<p><img alt="" src="../img/cap07/media/image29.png" /></p>
+<div class="admonition abstract">
+<p class="admonition-title">Definizione</p>
+<p><strong>Switch vs Hub</strong><br />
+In passato si avevano gli <strong>hub</strong>, dei dispositivi con funzioni analoghe a quelle dello switch ma meno intelligenti.<br />
+Come lo switch, anche l'hub permette la connessione di diversi computer tramite cavo ethernet, ma non è in grado di distinguere il destinatario.</p>
+<blockquote>
+<p>Al contrario dello <strong>switch</strong>, ogni messaggio che passa per <strong>l'hub</strong> viene inviato contemporaneamente <strong>a tutti i dispositivi connessi.</strong><br />
+Questo comporta molto traffico inutile sulla rete e potenzialmente problemi di sicurezza.</p>
+<p><strong>L'hub è stato sostituito in tutto e per tutto dallo switch</strong>.<br />
+L'unico vantaggio era il costo inferiore di un hub rispetto ad uno switch, ma con il progresso tecnologico il costo degli switch è sceso al punto in cui non ha più davvero senso comprare un hub.</p>
+<p>Il motivo per cui viene citato in questo testo è per sottolineare come gli switch siano intelligenti nel mandare il messaggio solo al destinatario.</p>
+</blockquote>
+</div>
+<p><strong>N.B. Importante!</strong></p>
+<p>Uno switch ci permette di collegare diversi dispositivi tra loro <strong>all'interno della stessa rete</strong> (tipicamente una rete locale). Per poter collegare dispositivi su reti diverse, ad esempio Internet serve un router (vedi capitolo a seguire)</p>
+<h4 id="access-point">Access Point<a class="headerlink" href="#access-point" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="../img/cap07/media/image17.png" />
+Un <strong>Access Point</strong> (spesso abbreviato in AP) è un dispositivo di rete che consente ai dispositivi di connettersi <strong>tramite una connessione wireless</strong> ad una rete.  </p>
+<p>In questo testo parleremo degli Access Point più comuni che sono quelli Wi-Fi, ma esistono anche AP Bluetooth e altre più di nicchia.</p>
+<p>Nello specifico i dispositivi wireless si connettono all'Access Point tramite Wi-Fi, l'Access Point è connesso al resto della rete tramite cavo ethernet. L'AP Fa in questo senso da ponte tra rete wireless e rete cablata.</p>
+<div class="admonition abstract">
+<p class="admonition-title">Definizione</p>
+<p>Un laptop e uno smartphone sono connessi tramite Wi-Fi ad un Access Point.<br />
+L'AP è connesso allo switch tramite cavo ethernet<img alt="" src="../img/cap07/media/image31.png" /></p>
+</div>
+<p>L'Access Point è un dispositivo di importanza strategica in una rete perché permette di connettere dispositivi tra loro senza l'esigenza di dover cablare le stanze e stendere tutti i cavi ethernet necessari ad una rete cablata.</p>
+<p><strong>Vediamo Pro e contro di una rete Wireless</strong></p>
+<div class="admonition info">
+<p class="admonition-title">Sintassi - Pro</p>
+<p><strong>Pro</strong> <strong>Contro</strong></p>
+<ul>
+<li>
+<p><strong>Facilità di installazione<br />
+</strong>L'installazione non richiede cablature della stanza, se non quella di collegare l'AP allo switch.</p>
+</li>
+<li>
+<p><strong>Facilità di connessione</strong><br />
+  I dispositivi possono essere collegati senza limitazione nel movimento</p>
+</li>
+</ul>
+<!-- -->
+<ul>
+<li>
+<p><strong>Meno sicuro<br />
+</strong>I dati che viaggiano su una rete wireless possono essere facilmente intercettati</p>
+</li>
+<li>
+<p><strong>Meno stabile<br />
+</strong>I dati viaggiano sotto forma di onde elettromagnetiche che possono soffrire di interferenza</p>
+</li>
+<li>
+<p><strong>Portata limitata</strong></p>
+</li>
+</ul>
+<p>Il Wi-Fi ha una portata limitata che viene ulteriormente diminuita da muri e ostacoli</p>
+</div>
+<!-- REVIEW: tipo di box da confermare -->
+
+<div class="admonition abstract">
+<p class="admonition-title">Definizione</p>
+<p><strong>Attenzione alla disposizione fisica degli Access Point!</strong></p>
+<blockquote>
+<p>Per ovviare alla portata limitata del Wi-Fi, è possibile mettere <strong>più Access Point</strong> nella rete.</p>
+<p>Tanta attenzione va messa anche sulla <strong>collocazione fisica</strong> dell'AP all'interno dell'edificio. <strong>La loro posizione va studiata in base alla conformazione dell'area da coprire</strong> e alle esigenze della rete.</p>
+</blockquote>
+</div>
+<p><strong>Esempio pratico:</strong><br />
+Immaginate un edificio come la nostra scuola, disposto su più piani, diversi corridoi e diverse aule. Abbiamo bisogno di una serie di Access Point opportunamente dislocati per riuscire a coprire l'intero edificio.</p>
+<p>Nella fattispecie la nostra scuola ha circa 60 AP disposti nelle diverse aule e nei diversi corridoi. Riuscite a trovarli?</p>
+<h4 id="router">Router<a class="headerlink" href="#router" title="Permanent link">&para;</a></h4>
+<p>Mentre lo switch (o l'hub) si occupa di smistare i dati tra i diversi computer <u>all'interno di una rete locale</u>, abbiamo bisogno di un dispositivo più sofisticato per permetterci di inviare dati su una rete diversa (ad esempio dalla nostra rete locale ad internet).</p>
+<p>Questo è il ruolo del Router. Termine che viene dall'inglese "route"="percorso", il router è il dispositivo che si occupa di decidere il percorso che i dati devono seguire per arrivare a destinazione. Si dice che il router si occupa <strong>dell'instradamento del traffico.</strong></p>
+<p>Diamo quindi una definizione</p>
+<div class="admonition abstract">
+<p class="admonition-title">Definizione</p>
+<p>Un <strong>router</strong> è un dispositivo di rete che si occupa di inoltrare pacchetti dati attraverso diverse reti informatiche.</p>
+<blockquote>
+<p>Il router si trova quindi all'interno di <strong>due reti diverse</strong> ( esempio classico: rete locale e rete internet) e <strong>si occupa di instradare i pacchetti da una rete verso l'altra</strong> indirizzando il pacchetto verso la rete in cui si trova il destinatario.</p>
+</blockquote>
+</div>
+<p>Come detto il router opera in generale tra due reti diverse, ma il caso più comune è quello in cui una è la rete locale, l'altra è la rete internet. Il resto della trattazione lavorerà su questo caso, ma <u>ricordiamo che non è l'unico</u>: Un router può connettere tra loro anche due reti locali o due reti con la stessa tecnologia di trasmissione. In effetti l'intera rete internet è costituita da sottoreti connesse tra loro tramite router. Soffermiamoci sul caso del router come <u>strumento per la connessione della rete locale ad internet</u></p>
+<p><strong>Due reti: due indirizzi IP.</strong><br />
+Mentre lo switch, come detto, si trova all'interno di una rete locale. Il router si trova su due reti, si può pensare come <strong>un'interfaccia tra la rete locale e la rete internet</strong>.</p>
+<p>Per essere collegato ad entrambe le reti il router è fornito di <strong>due porte diverse</strong>: tipicamente almeno una porta ethernet per il collegamento alle rete locale e una porta per la fibra ottica (o qualunque altra tecnologia porti internet nella nostra rete locale).</p>
+<p><img alt="" src="../img/cap07/media/image23.png" /></p>
+<p>Il router è quindi collegato a due reti contemporaneamente:</p>
+<div class="admonition abstract">
+<p class="admonition-title">Definizione</p>
+<p>Trovandosi su due reti, <strong>il router ha due indirizzi IP</strong>, uno in ogni rete.</p>
+<p>Avrà quindi un indirizzo IP nella <strong>rete locale</strong> (lo chiamiamo IP privato) e un indirizzo IP nella <strong>rete internet</strong> (IP pubblico)**.  </p>
+<p>Richieste verso l'esterno<br />
+<strong>Ogni richiesta su Internet fatta da un dispositivo nella rete locale passa per il router e arriva su Internet con l'</strong>indirizzo IP pubblico.**<br />
+<u>Tutti i dispositivi della rete locale hanno lo stesso IP pubblico verso l'esterno!</u></p>
+<p><strong>Richieste verso l'interno<br />
+</strong>Della mia intera rete locale all'esterno è visibile solo l'<strong>indirizzo IP pubblico.</strong> È a quell'indirizzo che vengono inviati i dati destinati ai singoli dispositivi.<br />
+<u>È compito del router instradare i pacchetti verso il dispositivo all'interno della rete locale che deve ricevere il pacchetto</u></p>
+<p>Utilizzare diversi indirizzi <strong>IP privati</strong> nella rete privata e un solo <strong>IP pubblico</strong> nella rete Internet è uno dei modi principali con cui riusciamo a non esaurire gli indirizzi IPv4. Maggiori dettagli nel capitolo apposito <a href="#importante---come-ipv4-risparmia-indirizzi-ip"><u>più avanti</u></a></p>
+</div>
+<p><img alt="" src="../img/cap07/media/image15.png" /></p>
+<div class="admonition abstract">
+<p class="admonition-title">Definizione</p>
+<p><strong>Risorsa video<br />
+</strong>In questo video viene spiegato molto bene come funziona un hub, uno switch e un router con delle ottime animazioni che aiutano a capire il compito ed il funzionamento dei singoli dispositivi<strong><br />
+</strong><a href="https://www.youtube.com/watch?v=1z0ULvg_pW8&amp;ab_channel=PowerCertAnimatedVideos"><u>Hub, Switch, &amp; Router Explained - What's the difference?</u></a>(07:22)<br />
+<u>Il video è in inglese, mettete i sottotitoli</u></p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Definizione</p>
+<p><strong>Approfondimento: il NAT (Network Address Translation)</strong></p>
+<blockquote>
+<p>Come detto, il router lavora su due reti con due set di indirizzi IP diversi. <strong>Tra i compiti del router c'è quello di tradurre gli indirizzi IP privati in indirizzi IP pubblici e viceversa.</strong></p>
+<p>Questa operazione prende il nome di NAT (Network Address Translation) ed è fondamentale per il funzionamento del sistema.  </p>
+</blockquote>
+<p>Maggiori dettagli sulla pagina <a href="https://it.wikipedia.org/wiki/Network_address_translation"><u>Wikipedia</u></a></p>
+</div>
+<h4 id="modem">Modem<a class="headerlink" href="#modem" title="Permanent link">&para;</a></h4>
+<div class="admonition abstract">
+<p class="admonition-title">Definizione</p>
+<p>Un <strong>modem</strong> (un termine derivato da "modulatore-demodulatore") è un dispositivo di rete che converte (modula) <strong>i dati da una forma digitale ad una analogica e viceversa</strong> (demodula).</p>
+<p>È un dispositivo essenziale per connettere reti domestiche o aziendali a Internet attraverso linee telefoniche (DSL) o fibra ottica.</p>
+</div>
+<p>Più nello specifico quando deve trasmettere <strong>un dato in uscita</strong>, il modem converte il segnale digitale, utilizzato dai computer, in una forma analogica compatibile con le linee telefoniche o cavi per la trasmissione;<br />
+accade l'opposto <strong>in ricezione</strong>: il modem converte il segnale analogico in un segnale digitale (demodula).</p>
+<p>N.B. <u>I modem sono spesso integrati nel router</u>.<br />
+In effetti il router rappresentato nell'immagine della sezione precedente fa anche da modem: ha infatti già la porta della fibra ottica e si occupa lui stesso di convertire il segnale Ethernet (digitale) nel segnale luminoso della fibra ottica (analogico)</p>
+<div class="admonition abstract">
+<p class="admonition-title">Definizione</p>
+<p><strong>Approfondimento - Risorsa video<br />
+</strong>video animato con dimostrazione del funzionamento di modem e router<strong><br />
+</strong><a href="https://www.youtube.com/watch?v=Mad4kQ5835Y"><u>Modem vs Router - What's the difference?</u></a> (07:00)<br />
+<u>Il video è in inglese, mettete i sottotitoli</u></p>
+</div>
+<h4 id="firewall">Firewall<a class="headerlink" href="#firewall" title="Permanent link">&para;</a></h4>
+<p>L'ultimo dispositivo di rete che vediamo è legato alla sicurezza della rete.</p>
+<div class="admonition info">
+<p class="admonition-title">Sintassi - Un firewall è un dispositivo di sicurezza</p>
+<p><strong>Un firewall è un dispositivo di sicurezza</strong> che monitora e controlla il traffico in entrata e in uscita secondo delle regole di sicurezza definite.</p>
+<p>Può essere sia un dispositivo fisico che essere implementato a livello di software.<br />
+<u>Si trova spesso integrato nei router</u></p>
+</div>
+<!-- REVIEW: tipo di box da confermare -->
+
+<p>Un firewall ha quindi la grande responsabilità di controllare il traffico di rete e proteggere la rete locale da accessi non richiesti.</p>
+<p>Nella sua configurazione di default il firewall <strong>blocca tutte le connessioni in entrata</strong>, lasciando passare soltanto quelle specificatamente concesse dall'amministratore.</p>
+<p>Il firewall può essere utilizzato anche per bloccare <strong>connessioni in uscita</strong>.<br />
+Un esempio potrebbe essere quello di un'azienda che voglia impedire ai propri dipendenti l'accesso a specifiche applicazioni o specifici siti, come i social network.</p>
+<h5 id="la-dmz-e-la-trusted-zone">La DMZ e la Trusted Zone<a class="headerlink" href="#la-dmz-e-la-trusted-zone" title="Permanent link">&para;</a></h5>
+<p>Tramite Firewall è possibile segmentare la propria rete interna in due aree:</p>
+<ul>
+<li>
+<p>Una <strong>Trusted Zone</strong>, zona sicura, in cui il firewall opera normalmente bloccando tutte le connessioni.<br />
+  Metteremo in questa area tutti i dispositivi della rete interna che ospitano dati sensibili o che comunque non devono essere accessibili da internet.</p>
+</li>
+<li>
+<p>Una <strong>DMZ</strong> (DeMilitarized Zone, ovvero zona demilitarizzata), in cui il firewall lascia libere le connessioni in ingresso.<br />
+  Metteremo in questa area tutti i dispositivi che vogliamo rendere raggiungibili dall'esterno, come ad esempio un server web</p>
+</li>
+</ul>
+<div class="admonition abstract">
+<p class="admonition-title">Definizione</p>
+<p><strong>Approfondimento - Risorsa video<br />
+</strong><a href="https://www.youtube.com/watch?v=dqlzQXo1wqo"><u>What is a DMZ? (Demilitarized Zone)</u></a>(07:00)</p>
+</div>
+<h4 id="il-caso-domestico">Il caso domestico<a class="headerlink" href="#il-caso-domestico" title="Permanent link">&para;</a></h4>
+<p>Abbiamo visto diversi dispositivi: switch, access point, router, modem, firewall.</p>
+<p>Nel caso di una rete locale di grandi dimensioni, come può essere una rete aziendale questi <strong>sono quasi sempre dispositivi distinti</strong>. Nel caso domestico (o comunque di reti semplici) si utilizzano dispositivi che svolgono tutte queste funzioni contemporaneamente.</p>
+<p>Il dispositivo che utilizziamo in casa e che chiamiamo router o modem:</p>
+<ul>
+<li>
+<p>ha uno <strong>Switch</strong> integrato, di solito con 4 porte ethernet</p>
+</li>
+<li>
+<p>fa da <strong>Router,</strong> smistando il traffico tra la rete interna e internet</p>
+</li>
+<li>
+<p>fa da <strong>Modem</strong>. Si collega infatti direttamente alla rete (fibra o telefono, o altro)</p>
+</li>
+<li>
+<p>ha un <strong>Access Point</strong>. Offre di solito la connessione Wi-Fi</p>
+</li>
+<li>
+<p>ha un <strong>firewall</strong> integrato<img alt="" src="../img/cap07/media/image38.png" /></p>
+</li>
+</ul>
+<p>Ricordiamoci però che, anche se il nostro Router è anche un Modem ed è anche un Access Point, <strong>queste sono funzionalità diverse e sono offerte da dispositivi diversi</strong>.</p>
+<p>Nel caso di una grossa rete non è pensabile realizzare tutto tramite un unico dispositivo di rete, serviranno diversi switch e diversi access point per riuscire a connettere tutti gli host che possono esserci.</p>
+<h3 id="713-i-mezzi-di-collegamento">7.1.3 I mezzi di collegamento<a class="headerlink" href="#713-i-mezzi-di-collegamento" title="Permanent link">&para;</a></h3>
+<p>I mezzi di collegamento, o mezzi trasmissivi, <strong>sono i canali fisici attraverso cui i dati vengono inviati da un punto all'altro in una rete.</strong></p>
+<p>La scelta del mezzo è determinante per la velocità, affidabilità e sicurezza della trasmissione. Vedremo in questo capitolo i principali canali, facendo la distinzione tra mezzi cablati (<em>wired</em>) e non cablati (<em>wireless</em>)</p>
+<h4 id="cablati">Cablati<a class="headerlink" href="#cablati" title="Permanent link">&para;</a></h4>
+<p><img alt="" src="../img/cap07/media/image2.png" /></p>
+<h5 id="cavo-ethernet">Cavo Ethernet.<a class="headerlink" href="#cavo-ethernet" title="Permanent link">&para;</a></h5>
+<p>Il cavo ethernet è lo standard più diffuso nelle reti di computer locali (reti LAN). È costituito da una coppia di cavi di rame intrecciati tra loro.</p>
+<p>Lo spinotto utilizzato dai cavi ethernet prende il nome di <strong>RJ45</strong>.</p>
+<p>La <strong>lunghezza massima per un cavo ethernet è di 100 metr</strong>i, motivo per cui è utilizzato <u>esclusivamente in reti locali.</u></p>
+<p>In base alle diverse versioni di cavo Ethernet (Cat5, Cat 5e, Cat6) <strong>la velocità può variare da 100Mbit/s (Megabit al secondo) fino a 10 Gbit/s (Gigabit al secondo)</strong>.</p>
+<h5 id="linea-telefonica">Linea telefonica.<a class="headerlink" href="#linea-telefonica" title="Permanent link">&para;</a></h5>
+<p><img alt="" src="../img/cap07/media/image14.png" />
+È il <strong>primo mezzo trasmissivo</strong> utilizzato nelle connessioni dial-up (modem 56k) e DSL.<br />
+Alla creazione delle prime reti di computer si cercava un modo per connettere tra loro dispositivi lontani: a quel punto il telefono <u>era già presente in praticamente tutte le case</u>, si è quindi fatto affidamento alla tecnologia di cavi già esistente e diffusa.</p>
+<p>I cavi del telefono sono solitamente realizzati in rame e gli impulsi viaggiano come segnali elettrici.</p>
+<p>È utilizzato per connettere dispositivi su grandi distanze, ha l'enorme vantaggio di essere già diffuso in tutte le case e non dover richiedere particolari lavori strutturali.</p>
+<p>La velocità massima raggiungibile tramite ADSL è solitamente intorno ai 24 Mbps in download e 4 Mbps in upload.<br />
+Su distanze molto molto brevi si può arrivare anche fino ai 100Mbps.</p>
+<p><img alt="" src="../img/cap07/media/image18.png" /></p>
+<h5 id="fibra-ottica">Fibra ottica<a class="headerlink" href="#fibra-ottica" title="Permanent link">&para;</a></h5>
+<p>È la tecnologia via cavo più veloce in assoluto ed è il principale mezzo trasmissivo utilizzato sulle grandi connessioni a lunga distanza della rete Internet.</p>
+<p>La fibra ottica è più veloce perché, mentre i cavi in rame sfruttano segnali elettrici per la trasmissione, <strong>la fibra ottica utilizza segnali luminosi.</strong></p>
+<p>La trasmissione dei dati avviene quindi tramite impulsi luminosi alla <strong>velocità della luce</strong> <em>(la velocità nella fibra ottica è di circa 200.000 km/s)</em>.<br />
+La luce risente molto meno della resistenza e dell'interferenza elettromagnetica rispetto all'utilizzo di segnali elettrici in un cavo di rame.</p>
+<p>La fibra ottica è realizzata con dei sottili filamenti di vetro che hanno la caratteristica di "intrappolare" la luce al suo interno.</p>
+<p>La luce che entra da un'estremità del filo uscirà soltanto dall'altra estremità:</p>
+<p><img alt="" src="../img/cap07/media/image6.png" /></p>
+<p>Esempio di utilizzo della fibra ottica è la lampada con filamenti di fibra ottica<img alt="" src="../img/cap07/media/image1.png" /></p>
+<p>Questo principio viene sfruttato per creare dei lunghi cavi di fibra ottica che permettono la trasmissione quasi istantanea di informazioni anche da una parte all'altra del mondo.</p>
+<p><strong>La fibra ottica in casa</strong></p>
+<p>Quando sottoscrivete un contratto di fibra ottica a casa avete diverse opzioni:</p>
+<ul>
+<li>
+<p><strong>FTTH</strong> (Fiber To The Home) - La fibra ottica arriva fino in casa vostra fino al vostro router. <strong>Questa è l'opzione preferibile:</strong> l'intera connessione è in fibra e avete la velocità di una connessione in fibra ottica.</p>
+</li>
+<li>
+<p><strong>FTTC</strong> (Fiber To The Cabinet) - La fibra ottica arriva fino ad una cabina sulla strada nel vostro quartiere. L'ultimo pezzo, dalla cabina alla vostra casa, è realizzato con il doppino in rame del telefono. C'è una significativa perdita di velocità nell'ultimo tratto. <u>Si utilizza quando non è possibile portare la fibra fino in casa</u></p>
+</li>
+</ul>
+<p><img alt="" src="../img/cap07/media/image35.png" /></p>
+<div class="admonition abstract">
+<p class="admonition-title">Definizione</p>
+<p>**Risorsa video  </p>
+<p><strong>La differenza tra connessione via cavo, via telefono e via fibra spiegata con delle </strong>ottime animazioni<strong>.<br />
+</strong>Iniziate a guardare da 2:24**. La connessione via cavo non è diffusa in Italia. Si appoggia al sistema di TV via cavo che è molto diffuso negli USA</p>
+<p><a href="https://www.youtube.com/watch?v=qQYiwmamq38&amp;ab_channel=PowerCertAnimatedVideos"><u>Cable vs DSL vs Fiber Internet Explained</u></a>(6:46)<br />
+<u>Il video è in inglese, mettete i sottotitoli</u></p>
+</div>
+<h4 id="non-cablati">Non cablati<a class="headerlink" href="#non-cablati" title="Permanent link">&para;</a></h4>
+<h5 id="wireless-o-wi-fi">Wireless o Wi-Fi?<a class="headerlink" href="#wireless-o-wi-fi" title="Permanent link">&para;</a></h5>
+<p>Cominciamo con l'osservare che i termini wireless e Wi-Fi <u>non sono tra loro sinonimi.</u></p>
+<ul>
+<li>
+<p><strong>Wireless</strong> indica in generale una tecnologia di trasmissione senza fili.</p>
+</li>
+<li>
+<p>Il <strong>Wi-Fi</strong> è una specifica tecnologia di trasmissione wireless. Sono wireless anche il bluetooth, gli infrarossi, il satellitare, la rete dati del telefono, ecc..<img alt="" src="../img/cap07/media/image8.png" /></p>
+</li>
+</ul>
+<h5 id="wi-fi">Wi-Fi<a class="headerlink" href="#wi-fi" title="Permanent link">&para;</a></h5>
+<p><strong>Il Wi-Fi è una tecnologia di comunicazione wireless</strong> che permette a dispositivi elettronici di scambiarsi dati o connettersi a internet <strong>tramite onde radio</strong>.</p>
+<p>È una delle tecnologie senza fili più diffuse al mondo, utilizzata sia in ambienti domestici che professionali per fornire accesso a internet senza la necessità di connessioni cablate.</p>
+<p>Per poter garantire l'accesso alla rete tramite Wi-Fi abbiamo già visto che <strong>occorre utilizzare un <a href="#access-point"><u>Access Point</u></a></strong>. Abbiamo esplorato in quel capitolo anche i vantaggi e gli svantaggi di offrire una connessione wireless nella nostra rete.</p>
+<p>Esploriamo meglio il funzionamento del Wi-Fi. Parleremo in particolare del Wi-Fi 4 e 5, le versioni attualmente più diffuse:</p>
+<p><strong>2.4GHz vs 5GHz<br />
+</strong>Il Wi-Fi funziona utilizzando bande di frequenza radio, principalmente 2,4 GHz e 5 GHz.</p>
+<p>Le due frequenze danno origine a due segnali con una lunghezza d'onda diversa. La 2.4GHz è più lunga e lenta, mentra la 5GHz è più corta e veloce.</p>
+<ul>
+<li>
+<p>La banda 2.4GHz offre una <strong>connessione più lenta</strong>, ma grazie alla sua lunghezza d'onda ha <strong>una portata maggiore</strong>, avendo anche maggiore penetrazione sui muri.<br />
+  <u>È una frequenza molto affollata</u>, anche le microonde e il bluetooth utilizzano frequenze simili c'è quindi il rischio di interferenza.<br />
+  La velocità massima teorica raggiunge i 500-600 Mbps, solitamente si raggiungono effettivi circa 100-200 Mbps</p>
+</li>
+<li>
+<p>La banda 5GHz offre una <strong>connessione più veloce</strong>, ma la sua <strong>portata è ridotta</strong> e risente molto di muri e ostacoli.<br />
+  La velocità massima teorica è di 3,46 Gbps, ma solitamente si raggiungono effettivi circa 500-800 Mbps</p>
+</li>
+</ul>
+<p>Da pochi anni (2020) si inizia a diffondere anche il Wi-Fi 6 che offre anche una banda a 6GHz e velocità attese molto più alte</p>
+<div class="admonition abstract">
+<p class="admonition-title">Definizione</p>
+<p>**Approfondimento - Risorse video  </p>
+<p>**Due video con ottime animazioni che spiegano la differenza tra 2.4GHz e 5GHz</p>
+<p><a href="https://www.youtube.com/watch?v=J_bf_KE5llQ&amp;ab_channel=PowerCertAnimatedVideos"><u>2.4 GHz vs 5 GHz WiFi: What is the difference?</u></a></p>
+<p>e cosa è un hotspot<br />
+<a href="https://www.youtube.com/watch?v=ktxC3vDukbc"><u>What is a Hotspot?</u></a><br />
+<u>Il video è in inglese, mettete i sottotitoli</u></p>
+</div>
+<h5 id="bluetooth">Bluetooth<a class="headerlink" href="#bluetooth" title="Permanent link">&para;</a></h5>
+<p><img alt="" src="../img/cap07/media/image33.png" />
+<span class="mark">Il Bluetooth è una tecnologia di comunicazione wireless progettata per lo scambio di dati <strong>su brevi distanze</strong> tra dispositivi.</span></p>
+<blockquote>
+<p><span class="mark">È stata concepita inizialmente come alternativa alla connessione con cavo, è diventata adesso praticamente uno standard per l'interconnessione di dispositivi elettronici quali smartphone, dispositivi audio, automobili, domotica, smartwatch e smartband, ecc…</span></p>
+<p><span class="mark">Il bluetooth ha il grande vantaggio di essere facilmente utilizzabile per l'utente e, specialmente nelle ultime versioni, bassi consumi, bassa latenza e ottima fedeltà audio.</span></p>
+<p><span class="mark">Il bluetooth utilizza onde radio a frequenze tra 2,402 e 2,480 GHz per connettere dispositivi entro un raggio di azione tipicamente di 10 metri</span></p>
+</blockquote>
+<div class="admonition abstract">
+<p class="admonition-title">Definizione</p>
+<p><strong>Curiosità<br />
+</strong>La tecnologia <strong>Bluetooth</strong> è stata sviluppata negli anni '90 da un gruppo di ingegneri che lavoravano per Ericsson, un'azienda svedese.</p>
+<blockquote>
+<p>Il nome "<strong>Bluetooth</strong>" è ispirato al re vichingo Harald "Bluetooth" Gormsson, noto per aver unito le tribù danesi e norvegesi nel X secolo.</p>
+<p>Analogamente, la tecnologia <strong>Bluetooth</strong> è stata creata per "unire" diversi dispositivi permettendo loro di comunicare senza cavi.</p>
+</blockquote>
+</div>
+<h5 id="rete-mobile-cellulare-4g5g">Rete mobile cellulare (4G/5G)<a class="headerlink" href="#rete-mobile-cellulare-4g5g" title="Permanent link">&para;</a></h5>
+<p><img alt="" src="../img/cap07/media/image10.png" />
+La <strong>rete mobile cellulare</strong> è una tecnologia complessa che fa utilizzo di onde elettromagnetiche per offrire la connessione a dei dispositivi <strong>mobili</strong>. Il sistema si basa su una rete di zone, denominate "celle" (da cui il termine "cellulare"), ognuna con una sua antenna e una sua stazione base.</p>
+<p>La grossa sfida rispetto alle altre reti è che la rete cellulare deve gestire dei dispositivi <strong>mobili</strong>, garantendo al dispositivo la connessione all'antenna più vicina e <strong>garantendo la continuità</strong> della connessione nel caso in cui l'utente si muova da una cella all'altra.</p>
+<div class="admonition example">
+<p class="admonition-title">Esempio: Pensate ad un viaggio in treno</p>
+<p><strong>Esempio: Pensate ad un viaggio in treno.</strong></p>
+<p>Durante il viaggio il vostro smartphone cambierà cella diverse volte e dovrà ogni volta collegarsi ad una nuova antenna e farlo, possibilmente, senza interrompere la vostra chiamata!</p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Definizione</p>
+<p>**Risorsa video: il viaggio del segnale sulla rete cellulare  </p>
+<p>**<a href="https://www.youtube.com/watch?v=B_pOf8Muv88"><u>Cosa c'è dietro le nostre chiamate e internet? Fermiamo il tempo e seguiamo il percorso del segnale</u></a></p>
+</div>
+<p>La <strong>rete mobile cellulare</strong> utilizzata dai nostri smartphone per le telecomunicazioni, offre in maniera sempre crescente la possibilità di comunicare: la tecnologia si è evoluta tantissimo negli ultimi 50 anni, con ogni generazione successiva che estende le possibilità e le capacità rispetto alla precedente, partendo dalle sole chiamate vocali ad una connessione ad internet sempre più veloce.</p>
+<div class="admonition abstract">
+<p class="admonition-title">Definizione</p>
+<p><strong>Approfondimento - Breve storia della trasmissione di dati tramite rete mobile:</strong></p>
+<ul>
+<li>
+<p><strong>1G - anni '80</strong>: prime reti cellulari. Possibile la trasmissione di <strong>voce</strong> tramite rete mobile</p>
+</li>
+<li>
+<p><strong>2G - Inizio anni '90</strong>: GSM e GPRS, è possibile la prima navigazione e l'invio di dati anche testuali: nascono <strong>gli SMS</strong>!</p>
+</li>
+<li>
+<p><strong>3G - Fine anni '90/inizio 2000</strong>: con il 3G, si inizia ad avere delle connessioni internet vere e proprie: nascono i primi <strong>smartphone!</strong></p>
+</li>
+<li>
+<p><strong>4G - 2010:</strong> Grosso salto tecnologico con la connessione via dati che raggiunge velocità teoriche fino a Gbps. Si possono adesso trasmettere <strong>video, immagini</strong>, giochi tramite rete mobile</p>
+</li>
+<li>
+<p><strong>5G - 2019:</strong> Grazie alla nuova tecnologia si possono arrivare a velocità teoriche fino a 20Gbps. Una crescente quantità di dispositivi si connette ad internet, abbiamo l'Internet delle cose <strong>(Internet of Things IoT)</strong></p>
+</li>
+</ul>
+</div>
+<h5 id="connessione-satellitare">Connessione Satellitare<a class="headerlink" href="#connessione-satellitare" title="Permanent link">&para;</a></h5>
+<p><img alt="" src="../img/cap07/media/image25.png" />
+Le tecnologie di comunicazione satellitare sfruttano l'utilizzo di satelliti artificiali in orbita attorno alla Terra per trasmettere e ricevere segnali.</p>
+<p>Il vantaggio principale rispetto alle altre tipologie di connessione è sicuramente la <strong>copertura</strong>: la connessione via satellite è disponibile in qualunque parte del mondo, in alta montagna come in aperta campagna, in alto mare come ad esempio in mezzo al continente africano.</p>
+<p>Questo perché non è necessario stendere dei cavi o avere un'antenna trasmettitrice nelle vicinanze. <u>Il satellite alto nel cielo è solitamente visibile da qualunque punto della superficie terrestre.</u></p>
+<p>Lo svantaggio di solito è l'<strong>alta latenza</strong>: la richiesta deve arrivare ai satelliti, in orbita a migliaia di km di quota, e poi tornare indietro sulla terra ad una stazione attrezzata per connettersi al resto della dorsale di internet.</p>
+<p>Le ultime tecnologie, come Starlink di SpaceX, stanno migliorando questo aspetto sfruttando dei satelliti a quote più basse, riducendo il tempo necessario per il viaggio dell'informazione.</p>
+<h3 id="71-domande-di-comprensione">7.1. Domande di comprensione<a class="headerlink" href="#71-domande-di-comprensione" title="Permanent link">&para;</a></h3>
+<h4 id="domande-a-crocette">Domande a crocette<a class="headerlink" href="#domande-a-crocette" title="Permanent link">&para;</a></h4>
+<p><strong>1. Parlando di come riconoscere un dispositivo in rete, quale di queste affermazioni spiega correttamente la differenza tra indirizzo MAC e indirizzo IP?</strong></p>
+<p>A) L'indirizzo IP è fisso per ogni dispositivo, mentre l'indirizzo MAC cambia se mi collego a un'altra rete.</p>
+<blockquote>
+<p>B) L'indirizzo MAC serve per navigare su Internet, l'indirizzo IP solo nella rete locale.</p>
+<p>C) Il servizio DHCP assegna gli indirizzi MAC ai computer collegati.</p>
+<p>D) L'indirizzo MAC è come un "codice fiscale" fisso della scheda di rete, mentre l'indirizzo IP è come un indirizzo postale che viene assegnato quando il dispositivo si collega a una rete.</p>
+</blockquote>
+<p><strong>2. Quando usi il browser sul tuo PC per visitare un sito web ospitato su un computer remoto, quale ruolo state svolgendo?</strong></p>
+<p>A) Il tuo PC è il server perché invia la richiesta iniziale.</p>
+<blockquote>
+<p>B) Sia il tuo PC sia il computer remoto sono contemporaneamente client e server.</p>
+<p>C) Il tuo PC è il client (chiede la pagina), il computer remoto è il server (fornisce la pagina).</p>
+<p>D) Il ruolo dipende solo da chi ha la connessione internet più veloce.</p>
+</blockquote>
+<p><strong>3. In una rete, quale compito svolge principalmente uno Switch e quale un Router?</strong></p>
+<p>A) Lo Switch collega i dispositivi all'interno della stessa rete locale usando gli indirizzi MAC, il Router collega reti diverse (come la rete locale e Internet) usando gli indirizzi IP.</p>
+<blockquote>
+<p>B) Il Router collega i PC vicini tra loro, lo Switch collega reti geograficamente distanti.</p>
+<p>C) Lo Switch collega alla linea telefonica, il Router gestisce le stampanti.</p>
+<p>D) Entrambi servono solo a creare la connessione Wi-Fi.</p>
+</blockquote>
+<p><strong>4. Se devi coprire con il Wi-Fi un ufficio grande con muri spessi, quale aspetto devi considerare attentamente riguardo agli Access Point (AP)?</strong></p>
+<p>A) Usare solo la frequenza 5 GHz perché è la più veloce, anche se il segnale arriva debole.</p>
+<blockquote>
+<p>B) Mettere un solo AP molto costoso sperando che copra tutto.</p>
+<p>C) Ricordare che il segnale Wi-Fi (soprattutto a 5 GHz) fatica ad attraversare i muri, quindi potrebbero servire più AP messi nei punti giusti.</p>
+<p>D) Non usare gli switch, ma collegare gli AP direttamente al computer principale.</p>
+</blockquote>
+<p><strong>5. Il "modem/router" che abbiamo solitamente a casa per la connessione Internet è un dispositivo multifunzione. Quale delle seguenti funzioni <em>non</em> è tipicamente inclusa?</strong></p>
+<p>A) Fare da piccolo Switch con alcune porte per collegare dispositivi via cavo.</p>
+<blockquote>
+<p>B) Fare da Access Point per fornire il segnale Wi-Fi.</p>
+<p>C) Fare da Server Web per creare e pubblicare un proprio sito internet.</p>
+<p>D) Fare da Firewall per proteggere la rete da accessi indesiderati.</p>
+</blockquote>
+<p><strong>6. Perché la Fibra Ottica che arriva fino a casa (FTTH) è molto più veloce dell'ADSL che usa la linea del telefono?</strong></p>
+<p>A) La fibra usa un voltaggio elettrico maggiore rispetto al cavo telefonico.</p>
+<blockquote>
+<p>B) La fibra trasmette i dati con segnali di luce, che sono più veloci e meno disturbati dei segnali elettrici usati dal cavo telefonico in rame.</p>
+<p>C) Il cavo della fibra è più spesso e quindi passano più dati insieme.</p>
+<p>D) L'ADSL ha bisogno di un filtro sulla presa telefonica, la fibra no.</p>
+</blockquote>
+<p><strong>7. Quale vantaggio principale offre la rete mobile (4G/5G) per uno smartphone rispetto al collegamento Wi-Fi di casa o dell'ufficio?</strong></p>
+<p>A) La rete mobile permette di rimanere connessi quasi ovunque, anche spostandosi, passando automaticamente da un'antenna all'altra.</p>
+<blockquote>
+<p>B) La rete mobile è sempre gratuita, mentre il Wi-Fi si paga.</p>
+<p>C) Il Wi-Fi consuma molta più batteria dello smartphone rispetto al 4G/5G.</p>
+<p>D) Per usare il Wi-Fi serve per forza un abbonamento con SIM.</p>
+</blockquote>
+<p><strong>8. Cos'è la DMZ (DeMilitarized Zone) che si può impostare su un firewall?</strong></p>
+<p>A) Una funzione per rendere il Wi-Fi più veloce.</p>
+<blockquote>
+<p>B) Un'area della rete, separata da quella interna principale, dove mettere i server (es. web server) che devono essere raggiungibili da Internet in modo controllato.</p>
+<p>C) Un sistema per bloccare la pubblicità sui siti web.</p>
+<p>D) La lista dei dispositivi autorizzati a collegarsi alla rete locale.</p>
+</blockquote>
+<p><strong>9. Quando scegli tra usare la frequenza Wi-Fi a 2.4 GHz o quella a 5 GHz, quale compromesso devi considerare?</strong></p>
+<p>A) La 2.4 GHz è sempre più veloce ma meno stabile.</p>
+<blockquote>
+<p>B) La 5 GHz arriva più lontano e attraversa meglio i muri.</p>
+<p>C) La 5 GHz è compatibile solo con i computer fissi, non con gli smartphone.</p>
+<p>D) La 2.4 GHz copre un'area più ampia e attraversa meglio i muri, ma di solito è più lenta della 5 GHz.</p>
+</blockquote>
+<p><strong>10. Un indirizzo come 192.168.0.25 a cosa corrisponde solitamente?</strong></p>
+<p>A) All'indirizzo MAC di una stampante.</p>
+<blockquote>
+<p>B) All'indirizzo IP pubblico della tua connessione Internet.</p>
+<p>C) A un indirizzo IP privato, usato per identificare un dispositivo all'interno della tua rete locale.</p>
+<p>D) A un indirizzo web completo di un sito.</p>
+</blockquote>
+<h4 id="domande-verofalso">Domande Vero/Falso<a class="headerlink" href="#domande-verofalso" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<p>L'indirizzo IP di un computer è un codice fisso assegnato in fabbrica alla scheda di rete e non cambia mai. <strong>V/F</strong></p>
+</li>
+<li>
+<p>In una rete, un Server è un dispositivo che solitamente risponde alle richieste fatte dai Client, offrendo risorse o servizi. <strong>V/F</strong></p>
+</li>
+<li>
+<p>Uno Switch serve principalmente a collegare tra loro reti diverse, come la rete di casa e Internet, usando gli indirizzi IP. <strong>V/F</strong></p>
+</li>
+<li>
+<p>La Fibra Ottica FTTC (Fiber To The Cabinet) porta il cavo in fibra ottica direttamente dentro casa dell'utente finale. <strong>V/F</strong></p>
+</li>
+<li>
+<p>Il Bluetooth è una tecnologia wireless pensata per collegare dispositivi a breve distanza, come cuffie allo smartphone. <strong>V/F</strong></p>
+</li>
+<li>
+<p>L'assegnazione statica degli indirizzi IP significa che un server (come il DHCP) fornisce un indirizzo IP a caso a ogni dispositivo ogni volta che si collega. <strong>V/F</strong></p>
+</li>
+<li>
+<p>Un cavo Ethernet standard può essere lungo anche diverse centinaia di metri senza problemi di trasmissione dati. <strong>V/F</strong></p>
+</li>
+<li>
+<p>Il termine "Wireless" e "Wi-Fi" sono sinonimi e indicano esattamente la stessa tecnologia. <strong>V/F</strong></p>
+</li>
+<li>
+<p>Il Modem si occupa principalmente di convertire i segnali digitali in analogici (e viceversa) per la trasmissione su certi tipi di linee, come quella telefonica. <strong>V/F</strong></p>
+</li>
+<li>
+<p>Un Firewall è un dispositivo hardware o software che aiuta a velocizzare lo scaricamento dei file da Internet. <strong>V/F</strong></p>
+</li>
+</ol>
+<h4 id="domande-di-rielaborazione">Domande di rielaborazione<a class="headerlink" href="#domande-di-rielaborazione" title="Permanent link">&para;</a></h4>
+<p><u>Queste domande testano la vostra conoscenza e la vostra abilità di rielaborazione in un formato discorsivo, come potrebbe essere una domanda di un'interrogazione o una traccia di un esame di stato</u></p>
+<ol>
+<li>
+<p>Descrivi i tre componenti fondamentali di una rete di computer (host, dispositivi di rete, mezzi di collegamento), fornendo esempi specifici per ciascuna categoria e spiegando brevemente il ruolo di ognuno.</p>
+</li>
+<li>
+<p>Illustra le differenze fondamentali tra indirizzo MAC e indirizzo IP. Spiega perché entrambi sono necessari per la comunicazione in rete, specificando in quali contesti prevale l'uso dell'uno o dell'altro e come vengono assegnati gli indirizzi IP (statico vs. DHCP).</p>
+</li>
+<li>
+<p>Spiega i ruoli distinti di Client e Server in un'architettura di rete. Fornisci almeno tre esempi di tipi diversi di server, descrivendo la funzione specifica di ciascuno.</p>
+</li>
+<li>
+<p>Confronta le funzioni di uno Switch e di un Router all'interno di una rete. Spiega su quali tipi di indirizzi opera ciascun dispositivo e in quale ambito della rete (locale vs. interconnessione di reti) è primariamente impiegato.</p>
+</li>
+<li>
+<p>Descrivi il ruolo di un Access Point (AP) in una rete. Discuti i vantaggi e gli svantaggi dell'utilizzo di una rete Wi-Fi rispetto a una rete cablata in termini di installazione, sicurezza, stabilità e portata.</p>
+</li>
+<li>
+<p>Analizza le principali tecnologie di connessione cablata (Ethernet, linea telefonica/DSL, fibra ottica), evidenziando per ciascuna le caratteristiche principali, i vantaggi, gli svantaggi e gli ambiti di utilizzo tipici.</p>
+</li>
+<li>
+<p>Illustra le diverse tecnologie di connessione non cablata (Wi-Fi, Bluetooth, Rete Mobile, Satellitare) , spiegando per ognuna il principio di funzionamento generale, il raggio d'azione tipico e i principali casi d'uso.</p>
+</li>
+</ol>
+<p><strong>Risposte corrette. Evidenziare con il mouse per vedere le risposte</strong></p>
+<p><strong>Crocette:</strong></p>
+<ol>
+<li>
+<p>D</p>
+</li>
+<li>
+<p>C</p>
+</li>
+<li>
+<p>A</p>
+</li>
+<li>
+<p>C</p>
+</li>
+<li>
+<p>C</p>
+</li>
+<li>
+<p>B</p>
+</li>
+<li>
+<p>A</p>
+</li>
+<li>
+<p>B</p>
+</li>
+<li>
+<p>D</p>
+</li>
+<li>
+<p>C</p>
+</li>
+</ol>
+<p><strong>Vero/Falso:</strong></p>
+<ol>
+<li>
+<p><strong>Falso</strong> (È l'indirizzo MAC ad essere fisso e assegnato in fabbrica; l'IP viene assegnato alla connessione).</p>
+</li>
+<li>
+<p><strong>Vero</strong>.</p>
+</li>
+<li>
+<p><strong>Falso</strong> (Questo è il ruolo del Router; lo Switch collega dispositivi nella stessa rete locale usando indirizzi MAC).</p>
+</li>
+<li>
+<p><strong>Falso</strong> (FTTC arriva alla cabina stradale; è FTTH che arriva in casa).</p>
+</li>
+<li>
+<p><strong>Vero</strong>.</p>
+</li>
+<li>
+<p><strong>Falso</strong> (L'assegnazione statica significa che l'indirizzo IP è fisso e configurato manualmente; è il DHCP che assegna indirizzi dinamicamente ).</p>
+</li>
+<li>
+<p><strong>Falso</strong> (La lunghezza massima per un cavo Ethernet è di 100 metri ).</p>
+</li>
+<li>
+<p><strong>Falso</strong> (Wireless è un termine generale per "senza fili", Wi-Fi è una specifica tecnologia wireless).</p>
+</li>
+<li>
+<p><strong>Vero</strong>.</p>
+</li>
+<li>
+<p><strong>Falso</strong> (Un Firewall serve per la sicurezza, monitorando e controllando il traffico ).</p>
+</li>
+</ol>
+<h2 id="72-reti-aziendali-e-la-rete-internet">7.2 Reti aziendali e la rete Internet<a class="headerlink" href="#72-reti-aziendali-e-la-rete-internet" title="Permanent link">&para;</a></h2>
+<p>Vediamo adesso come tutti questi dispositivi e mezzi di trasmissione si utilizzano per realizzare delle reti. Nel dettaglio vedremo prima una rete locale, nello specifico una rete aziendale, e poi vedremo come questa si connetta ad internet, cercando di comprendere il funzionamento della rete globale.</p>
+<h3 id="721-la-rete-aziendale">7.2.1 La rete aziendale<a class="headerlink" href="#721-la-rete-aziendale" title="Permanent link">&para;</a></h3>
+<p>Abbiamo visto nel capitolo 7.1.2 i diversi dispositivi di rete. Facciamo un breve riassunto e poi analizziamo come questi si possano disporre in base alle esigenze aziendali</p>
+<ul>
+<li>
+<p><strong>Switch:</strong> connessione in una rete locale tramite cavi ethernet</p>
+</li>
+<li>
+<p><strong>Access Point</strong>: connessione al resto della rete cablata tramite Wi-Fi</p>
+</li>
+<li>
+<p><strong>Router:</strong> interfaccia tra rete locale e rete internet. Ipotizziamo in questo capitolo che il modem sia integrato nel router.</p>
+</li>
+<li>
+<p><strong>Firewall:</strong> dispositivo di sicurezza che blocca le connessioni indesiderate</p>
+</li>
+</ul>
+<p>Conoscendo i dispositivi abbiamo la possibilità di strutturare la rete aziendale secondo le richieste. Vediamo come realizzare la rete locale in base ad alcune esigenze più comuni in un formato di elenco di requisiti. Vediamo poi un po' di esempi pratici.</p>
+<h4 id="elenco-di-possibili-requisiti">Elenco di possibili requisiti<a class="headerlink" href="#elenco-di-possibili-requisiti" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<p>Connettere <strong>diversi computer</strong> ad internet</p>
+</li>
+<li>
+<p>Disporre di una <strong>rete wireless</strong></p>
+</li>
+<li>
+<p>Disporre di un <strong>server database</strong> o un server applicazioni interno</p>
+</li>
+<li>
+<p>Disporre di un <strong>server web pubblico</strong></p>
+</li>
+<li>
+<p>Dare la possibilità di <strong>telelavoro:</strong> un dipendente che si trova in casa propria può accedere alla rete locale protetta (utilizzeremo una <a href="#la-vpn-virtual-private-network"><strong><u>VPN</u></strong></a>)</p>
+</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Osservazione</p>
+<p><strong>Osservazione</strong>: <strong>questi requisiti possono essere composti a piacere!</strong><br />
+Non è detto che una rete locale debba avere una rete wireless o che debba disporre di un server web pubblico. <u>A priori non è neanche detto che la rete locale debba poter andare su Internet!</u></p>
+<p>Si possono avere <strong>tutti</strong> questi requisiti, <strong>solo uno</strong>, oppure solo alcuni. Dobbiamo analizzare la situazione e capire dai requisiti quali dispositivi utilizzare.</p>
+<p><u>Nessun dispositivo è obbligatorio a prescindere</u></p>
+</div>
+<p>Vediamo la soluzione per le prime 4 ed esploriamo separatamente la quinta, andando ad analizzare cos'è una VPN.</p>
+<ol>
+<li>
+<p><strong>Requisito</strong>: Diversi computer connessi ad internet<br />
+<strong>Soluzione</strong>: utilizziamo <strong>uno o più switch</strong> in base al numero di dispositivi da connettere e alle stanze in cui dobbiamo portare la rete. Poiché è richiesta una connessione ad internet, dobbiamo assicurarci di avere un <strong>router</strong> e un abbonamento ad un ISP.</p>
+</li>
+<li>
+<p><strong>Requisito</strong>: Rete wireless<br />
+<strong>Soluzione</strong>: poiché è richiesta una rete wireless dovremmo utilizzare <strong>uno o più Access Point</strong>. Il numero di Access Point va ragionato in base all'estensione dell'area da coprire e al numero atteso di dispositivi. Una buona indicazione può essere 20/30 dispositivi per ogni AP</p>
+</li>
+<li>
+<p><strong>Requisito:</strong> Disporre di un server database o un server applicazioni interno<br />
+<strong>Soluzione</strong>: se la rete <strong>non è connessa</strong> a Internet, non occorre prendere altre precauzioni: il server database è raggiungibile solo dalla rete locale.<br />
+    Se la rete locale <strong>è connessa</strong> ad internet, occorre configurare un <strong>firewall</strong> e posizionare i dispositivi nella <strong>trusted zone</strong> della rete.</p>
+</li>
+<li>
+<p><strong>Requisito:</strong> Disporre di un server web pubblico<br />
+<strong>Soluzione</strong>: perché il server sia pubblico si intende intanto che ci debba essere un <strong>router</strong> e quindi un <strong>firewall</strong> per garantire la sicurezza della rete interna.<br />
+    Per far sì che il server web resti raggiungibile dall'esterno bisogna posizionarlo nella <strong>DMZ.<br />
+</strong>Avendo un Firewall e una DMZ, lasciamo che il server sia accessibile senza compromettere la sicurezza della rete interna.</p>
+</li>
+</ol>
+<p>Vediamo un diagramma che rappresenta una rete che risponde a questi quattro requisiti. Resta al lettore per esercizio disegnare una rete con solo alcuni dei requisiti.</p>
+<p><img alt="" src="../img/cap07/media/image9.jpg" /></p>
+<div class="admonition info">
+<p class="admonition-title">Sintassi - Diagramma di una rete locale completa</p>
+<p><strong>Diagramma di una rete locale completa<br />
+</strong>Osservazioni:</p>
+<ol>
+<li>
+<p>I diversi computer della rete locale sono collegati ad uno <strong>Switch</strong>, assieme ad una stampante.</p>
+</li>
+<li>
+<p>Un <strong>Access Point</strong> garantisce la connessione Wi-Fi a un tablet e a uno smartphone</p>
+</li>
+<li>
+<p>Un <strong>Firewall</strong> garantisce la sicurezza nella Trusted Zone, dove troviamo i server ad uso interno dell'azienda</p>
+</li>
+<li>
+<p>Il <strong>Firewall</strong> è configurato in modo da avere una DMZ dove troviamo il web server, raggiungibile dall'esterno.</p>
+</li>
+</ol>
+</div>
+<!-- REVIEW: tipo di box da confermare -->
+
+<p>Affrontiamo adesso l'ultimo requisito lasciato indietro.  </p>
+<p><strong>Requisito:</strong> il telelavoro.<br />
+Vogliamo dare la possibilità al dipendente di collegarsi alla rete locale dell'azienda da un altro luogo.</p>
+<p><strong>Soluzione 1</strong>: <strong>una connessione dedicata</strong><br />
+Una prima possibilità è avere una connessione dedicata:</p>
+<p>Se ad esempio un'azienda ha due sedi dislocate potrebbe commissionare dei lavori e fare stendere un cavo dedicato, probabilmente in fibra ottica, che colleghi le due sedi senza passare per la rete internet.</p>
+<p>Questa opzione è molto sicura, perché nessuno, tranne l'azienda stessa, ha accesso a quel cavo. Questa opzione è anche molto molto <strong>costosa</strong>!</p>
+<p><strong>Soluzione 2</strong>: utilizzare sulla rete internet una VPN (Virtual Private Network)</p>
+<h4 id="la-vpn-virtual-private-network">La VPN (Virtual Private Network)<a class="headerlink" href="#la-vpn-virtual-private-network" title="Permanent link">&para;</a></h4>
+<p>La <strong>VPN (Virtual Private Network)</strong> è una tecnica che crea una connessione sicura su una rete non sicura come internet utilizzando la crittografia e il concetto di <strong>tunneling.</strong></p>
+<p>Creiamo quindi su internet (una rete per definizione <strong>pubblica</strong>) una <strong>rete privata virtuale</strong> sicura.<br />
+La rete è <strong>Privata</strong> perché tramite crittografia l'accesso è consentito soltanto agli utenti in possesso delle credenziali necessarie.<br />
+La rete è <strong>Virtuale</strong> perché non è una rete reale realizzata effettivamente con dei cavi o dei dispositivi di rete specifici, è invece una rete locale <em>simulata</em> tramite il software</p>
+<p>Un utilizzo della VPN è quello di estendere virtualmente la rete locale aziendale attraverso internet. Lo facciamo in questo modo:</p>
+<ol>
+<li>
+<p>Installare un <strong>server VPN</strong> all'interno della rete locale dell'azienda. Lo possiamo inserire nella DMZ o nella trusted zone (configurando adeguatamente il firewall).</p>
+</li>
+<li>
+<p>Configurare la lista di utenti che possono accedere alla VPN.</p>
+</li>
+<li>
+<p>Fornire agli utenti da remoto un client VPN che si colleghi al server assieme a delle credenziali con username e password necessarie per stabilire la connessione.</p>
+</li>
+</ol>
+<p>Cosa accade quando un client si collega alla VPN?</p>
+<ol>
+<li>
+<p><strong>Tunneling.</strong> Tutte le trasmissioni del computer del client vengono cifrate ed indirizzate al server VPN. Durante tutto il percorso su internet la trasmissione è cifrata.</p>
+</li>
+<li>
+<p><strong>Decifrazione</strong>. Il server VPN riceve i pacchetti e li decifra all'interno della rete locale aziendale dove prosegue il suo normale percorso sulla rete.</p>
+</li>
+</ol>
+<p><img alt="" src="../img/cap07/media/image28.png" /></p>
+<p>In questo modo è a tutti gli effetti come se il computer del client si trovasse all'interno della rete locale aziendale, potendo accedere a tutte le sue risorse in maniera sicura e protetta</p>
+<p><strong>Attenzione:</strong> <u>anche il traffico su internet risulta come proveniente dalla rete locale aziendale</u> quindi se, ad esempio, l'utente si trova a Bologna e la sede dell'azienda è a Berlino, le richieste su internet fatte dall'utente verranno visualizzate dal server come richieste da Berlino!</p>
+<div class="admonition abstract">
+<p class="admonition-title">Definizione</p>
+<p><strong>Approfondimento - La VPN commerciale</strong></p>
+<blockquote>
+<p>Su Internet e sui video di Youtube si sente spesso parlare di VPN come una soluzione sicura per il traffico su Internet.</p>
+<p>Il sistema è quello appena descritto, ma invece di avere un server VPN all'interno di una rete di un'azienda, ci connettiamo al server VPN di chi offre questo servizio.</p>
+<p>I vantaggi descritti sono:</p>
+</blockquote>
+<ol>
+<li>
+<p><strong>Protezione</strong> - Come abbiamo visto il traffico viene cifrato ulteriormente, utile se per qualche ragione i nostri dati viaggiavano non cifrati.</p>
+</li>
+<li>
+<p><strong>Privacy</strong> - Quando siamo connessi ad una VPN i siti web non vedono il nostro indirizzo IP, vedono invece quello del server VPN a cui siamo connessi. Questo in teoria permette di rimanere anonimi.</p>
+</li>
+<li>
+<p><strong>Aggirare blocchi geografici</strong> - Per la stessa ragione di prima, possiamo aggirare dei blocchi geografici.<br />
+    Prendiamo come esempio lo streaming dei programmi BBC (principale canale TV del Regno Unito): dal sito della BBC è possibile visionare in diretta i canali, ma <strong>soltanto se ti trovi in UK</strong>. Se io dall'Italia volessi vedere quel canale potrei connettermi ad un server VPN che si trova in UK e visualizzare lo stesso il contenuto.<br />
+    Con lo stesso concetto è possibile vedere i contenuti delle piattaforme di streaming disponibili solo all'estero<br />
+<strong><u>N.B. Queste pratiche spesso violano i termini di utilizzo del servizio</u></strong></p>
+</li>
+</ol>
+<p>Gli svantaggi sono:</p>
+<ul>
+<li>
+<p><strong>Connessione più lenta</strong>: ovviamente la connessione diventa più lenta perché i dati devono fare diversi passaggi in dovendo raggiungere ogni volta il server VPN e poi essere reindirizzati verso il destinatario.</p>
+</li>
+<li>
+<p><strong>Dati di navigazione</strong>: l'azienda che ospita il server VPN può monitorare tutto il nostro traffico e sapere cosa facciamo. Se utilizziamo dei server VPN non sicuri, o di ignoti proprietari, siamo paradossalmente più a rischio.</p>
+</li>
+</ul>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Sintassi - Approfondimento 2 - Il vero funzionamento di una VPN</p>
+<p><strong>Approfondimento 2 - Il vero funzionamento di una VPN<br />
+</strong>Dal diagramma precedente sembra che ci sia un tunnel che connette direttamente la rete locale dell'utente alla rete aziendale senza passare da ISP e rete internet.</p>
+<p>Quella rappresentazione schematica serve per trasmettere l'idea di una connessione 'diretta' e 'privata' alla rete aziendale</p>
+<p><img alt="" src="../img/cap07/media/image34.png" /></p>
+<p>Questa rappresentazione risulta forse meno immediata ma è più fedele alla realtà.</p>
+<p><strong>Il tunneling avviene attraverso la rete internet</strong></p>
+<p>I pacchetti vengono <strong>cifrati dal client VPN</strong> e passano comunque per l'ISP (il provider), che vede come destinatario del pacchetto il server VPN.</p>
+<p>Si parla di tunneling non perché ci sia una trasmissione diretta di dati tra client e server, ma perché tutti gli host intermedi tra il client e il server VPN non possono sapere nulla del pacchetto <strong>cifrato</strong>.</p>
+<p><strong>Risorsa video: <a href="https://www.youtube.com/watch?v=R-JUOpCgTZc&amp;ab_channel=PowerCertAnimatedVideos"><u>VPN (Virtual Private Network) Explained</u></a></strong></p>
+</div>
+<!-- REVIEW: tipo di box da confermare -->
+
+<h3 id="722-la-rete-internet">7.2.2 La rete internet<a class="headerlink" href="#722-la-rete-internet" title="Permanent link">&para;</a></h3>
+<p><span class="mark">La rete Internet è un complesso sistema globale che collega miliardi di dispositivi tra loro. È costituita da una vasta rete di infrastrutture fisiche e tecnologie di trasmissione dati che lavorano insieme per facilitare la comunicazione e lo scambio di informazioni.<br />
+Vediamo come prima la sua colonna vertebrale.</span></p>
+<h4 id="la-dorsale-di-internet">La dorsale di internet<a class="headerlink" href="#la-dorsale-di-internet" title="Permanent link">&para;</a></h4>
+<p>Con dorsale di internet (in inglese <a href="https://en.wikipedia.org/wiki/Internet_backbone"><u>Internet backbone</u></a>) si fa riferimento alle <strong>principali vie di trasmissioni dati ad alta velocità</strong> che in un certo senso formano l'ossatura (la spina dorsale) dell'intera rete.</p>
+<p><strong>Sono principalmente cavi in fibra ottica</strong> che collegano i principali nodi di rete, server, data center, ISP (Internet Service Provider).</p>
+<p>Questi sono cavi molto grossi e molto lunghi, disposti in modo da collegare le diverse aree geografiche e sono <u>spesso dei cavi sottomarini.</u> Un esempio è quello che collega l'Europa agli Stati Uniti che è stato disposto sul fondo dell'Oceano Atlantico.</p>
+<div class="admonition abstract">
+<p class="admonition-title">Definizione</p>
+<p>**Risorsa video: i cavi sottomarini  </p>
+<p>**<a href="https://www.youtube.com/watch?v=SSvCMJTLbFY"><u>CAVI SOTTOMARINI - la fibra ottica del mondo passa in fondo agli oceani, altro che satelliti - Ep-1</u></a></p>
+</div>
+<p>Questa è una mappa delle principali dorsali al momento.<br />
+<img alt="" src="../img/cap07/media/image30.png" /></p>
+<h4 id="provider-di-servizi-internet-isp">Provider di Servizi Internet (ISP)<a class="headerlink" href="#provider-di-servizi-internet-isp" title="Permanent link">&para;</a></h4>
+<p>Gli ISP collegano gli utenti finali alla backbone di Internet, agendo come intermediari.  </p>
+<p>Forniscono accesso a Internet a clienti residenziali, aziendali e governativi utilizzando una varietà di tecnologie, inclusi cavi in rame (DSL), fibra ottica (FTTH, FTTB), e connessioni wireless (Wi-Fi, 4G/5G).</p>
+<p>In Italia i principali sono Tim, Vodafone, Fastweb, Windtre, ecc…</p>
+<h4 id="internet-come-rete-di-reti">Internet come rete di reti<a class="headerlink" href="#internet-come-rete-di-reti" title="Permanent link">&para;</a></h4>
+<p>Abbiamo visto prima come collegare una rete locale ad internet grazie ad un ISP</p>
+<p><strong>Ma cos'è quindi internet?</strong></p>
+<p>Internet è un insieme di reti connesse tra loro, dove i grandi ISP e data center si occupano di smistare il traffico tra le diverse reti.</p>
+<p><img alt="" src="../img/cap07/media/image36.png" /></p>
+<p>Esempio di uno schema di reti. Per l'immagine a dimensioni originali potete cliccare <a href="https://learnlearn.uk/gcsecs/wp-content/uploads/sites/8/2019/01/Internet-Diagram.png"><u>qui</u></a></p>
+<p><strong>Domanda.</strong>Vediamo se avete studiato: qual è il dispositivo che si occupa di smistare il traffico tra le diverse reti? Ma è il router ovviamente!</p>
+<p>Quindi abbiamo una rete, composta da tantissime reti connesse tra loro e tantissimi router che, conoscendo l'indirizzo IP del destinatario, smistano il traffico indirizzandolo verso la rete che contiene quell'indirizzo IP.</p>
+<div class="admonition abstract">
+<p class="admonition-title">Definizione</p>
+<p><strong>Approfondimento: il comando tracert<br />
+</strong>Per vedere tutti i passaggi nella rete che vengono fatti ad ogni richiesta possiamo usare il comando <em>tracert</em> sul prompt dei comandi di Windows.</p>
+<blockquote>
+<p>Si apre il prompt dei comandi e si digita tracert seguito dall'host a cui vogliamo collegarci.</p>
+<p><strong>Esempio:</strong></p>
+<p><em>tracert <a href="https://www.salvemini-bo.edu.it/"><u>https://www.salvemini-bo.edu.it/</u></a></em></p>
+<p>Mostrerà tutti i passaggi necessari per raggiungere il server che ospita il sito web della scuola.</p>
+</blockquote>
+</div>
+<p>Come faccia un pacchetto a trovare la sua destinazione su una rete di queste dimensioni è un problema piuttosto complesso, di cui non discuteremo qui (si parla di <strong>protocolli di routing).</strong></p>
+<p>Cerchiamo almeno di capire come fa un <strong>utente</strong> a trovare un determinato server.</p>
+<h4 id="dns-domain-name-system">DNS (Domain Name System)<a class="headerlink" href="#dns-domain-name-system" title="Permanent link">&para;</a></h4>
+<p>Abbiamo compreso finora che tutta la navigazione su internet funziona tramite indirizzi IP, quindi per trovare una risorsa servirebbe teoricamente conoscere l'indirizzo IP della macchina che ospita quella risorsa.</p>
+<p>Difficilmente si può pensare di ricordare gli indirizzi IP dei diversi server, in questo viene incontro il sistema dei <strong>nomi di dominio</strong>.</p>
+<div class="admonition info">
+<p class="admonition-title">Sintassi - Il nome di dominio</p>
+<p><strong>Il nome di dominio</strong> è un indirizzo web leggibile dall'uomo che identifica in modo univoco un sito su internet.</p>
+<p>Esempio di nome di dominio è <strong>www.google.it</strong></p>
+<p>In questo nome di dominio abbiamo</p>
+<ul>
+<li>
+<p><strong>www:</strong> la tipologia di servizio</p>
+</li>
+<li>
+<p><strong>Google:</strong> dominio di secondo livello</p>
+</li>
+<li>
+<p><strong>.it:</strong> dominio di primo livello,</p>
+</li>
+</ul>
+<p><img alt="" src="../img/cap07/media/image13.png" /></p>
+</div>
+<!-- REVIEW: tipo di box da confermare -->
+
+<p>L'utente può quindi ricordare il nome di dominio di un sito, si occuperà poi la macchina di ottenere il suo indirizzo IP. Per fare ciò deve ricorrere a un <strong>DNS</strong></p>
+<div class="admonition abstract">
+<p class="admonition-title">Definizione</p>
+<p>Il <strong>DNS</strong> è un servizio in cui <strong>ad ogni nome di dominio è associato il corrispettivo indirizzo IP.</strong></p>
+<p>Il server DNS utilizzato nelle configurazioni solite è quello fornito dal ISP. Si può scegliere di cambiare la configurazione per utilizzare il server DNS di terze parti.</p>
+</div>
+<p>Fondamentalmente il DNS è come una grossa rubrica telefonica, in cui ad ogni nome di dominio corrisponde l'indirizzo IP.</p>
+<p>In questo modo all'utente non serve ricordare l'indirizzo IP, ma basta il nome.</p>
+<div class="admonition abstract">
+<p class="admonition-title">Definizione</p>
+<p><strong>Un utente vuole visitare il sito Google per fare una ricerca.</strong></p>
+<p>Se non esistesse il DNS, <strong>l'utente avrebbe bisogno di conoscere l'indirizzo IP</strong> corrispondente al server che ospita il sito di Google (in questo momento è 142.251.163.94) e digitarlo nella barra indirizzi del proprio browser.</p>
+<p>Con il sistema del DNS l'utente deve ricordare solamente il nome di dominio <strong>www.google.it</strong>. Digita questo indirizzo nella barra di navigazione del browser e automaticamente la macchina trova l'indirizzo.</p>
+<p>Più nello specifico:</p>
+<ol>
+<li>
+<p>La richiesta arriva al <strong>server DNS</strong> del nostro ISP (se non abbiamo scelto un DNS diverso, tipo OpenDNS o il DNS offerto da Google)<strong>.</strong></p>
+</li>
+<li>
+<p>Il server DNS traduce il dominio www.google.it nell'indirizzo IP 142.251.163.94</p>
+</li>
+<li>
+<p>Avendo adesso l'indirizzo IP la macchina dell'utente riesce a stabilire una connessione con il server di Google e visitare la pagina.</p>
+</li>
+</ol>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Sintassi - Una soluzione anti-pirata: bloccare il DNS</p>
+<p><strong>Una soluzione anti-pirata: bloccare il DNS</strong></p>
+<p><strong>Osservazione</strong>: il DNS è il sistema con cui a nome di dominio corrisponde indirizzo IP.</p>
+<p><u>Quando le forze dell'ordine rendono indisponibile un sito solitamente vanno ad agire sui DNS</u></p>
+<p>Se ci pensate, un sito illegale molto spesso ha i server in <strong>nazioni diverse dall'Italia</strong>. La nostra Guardia di Finanza non può fisicamente andare dove si trova il server, sequestrare le macchine e staccare i cavi: <strong>Il sito web non viene fisicamente disconnesso da internet</strong>.</p>
+<p>Solitamente la GdF chiede agli ISP italiani che venga rimossa la voce dal DNS. <strong>In questo modo il sito, per quanto ancora online, risulta irraggiungibile dall'Italia.</strong></p>
+<p>Un altro modo per ottenere questo effetto è il <strong>blocco dell'IP</strong> che può portare a diversi danni collaterali nel caso di hosting condivisi. In Italia è interessante il caso di <a href="https://www.wired.it/article/piracy-shield-blocco-google-drive-download/"><u>Piracy Shield che blocca Google Drive</u></a></p>
+</div>
+<!-- REVIEW: tipo di box da confermare -->
+
+<h3 id="visita-di-un-sito-web-il-percorso-completo">Visita di un sito web: il percorso completo<a class="headerlink" href="#visita-di-un-sito-web-il-percorso-completo" title="Permanent link">&para;</a></h3>
+<p>Vediamo nel dettaglio il percorso di una richiesta su internet per visitare un sito web. Nell'esempio a seguire il sito web sarà <a href="http://www.youtube.com"><u>www.youtube.com</u></a>. Si ipotizza la configurazione di default con il DNS dell'ISP</p>
+<p><img alt="" src="../img/cap07/media/image32.png" /></p>
+<p>L'utente sul PC4 vuole visitare il sito web www.youtube.com</p>
+<ol>
+<li>
+<p>Digita sul suo browser l'indirizzo</p>
+</li>
+<li>
+<p>La richiesta parte dal PC4 e, tramite lo switch, arriva al router.</p>
+</li>
+<li>
+<p>Il router gira la richiesta dell'utente sulla rete internet, inviandola all'ISP.</p>
+</li>
+<li>
+<p>L'ISP fa riferimento al DNS per tradurre il nome di dominio nel corrispondente indirizzo IP</p>
+</li>
+<li>
+<p>Tramite l'indirizzo IP la richiesta può raggiungere il server di www.youtube.com.</p>
+</li>
+<li>
+<p>Il server riceve la richiesta e risponde inviando la pagina richiesta dall'utente.</p>
+</li>
+<li>
+<p>La pagina arriva all'ISP che lo gira al nostro router che lo gira al PC4</p>
+</li>
+</ol>
+<h2 id="723-server-in-locale-vs-server-in-cloud">7.2.3 Server in locale VS Server in Cloud<a class="headerlink" href="#723-server-in-locale-vs-server-in-cloud" title="Permanent link">&para;</a></h2>
+<p>Nei capitoli precedenti abbiamo esplorato come costruire una rete locale e come questa si connette alla rete globale, Internet. Una decisione fondamentale per qualsiasi organizzazione che necessiti di fornire servizi (come siti web, database, applicazioni gestionali) riguarda dove posizionare e come gestire l'infrastruttura server necessaria. Storicamente, l'unica opzione era quella di avere server fisici all'interno della propria struttura aziendale. Oggi, l'alternativa predominante è rappresentata dai servizi Cloud.</p>
+<p>In questo capitolo confronteremo questi due approcci principali: mantenere i server "in locale" (on-premises) rispetto all'utilizzo di server "in Cloud".</p>
+<h3 id="il-server-in-locale-in-house">Il Server in Locale (In-house)<a class="headerlink" href="#il-server-in-locale-in-house" title="Permanent link">&para;</a></h3>
+<p>Questo è l'approccio tradizionale alla gestione dell'infrastruttura IT.</p>
+<div class="admonition info">
+<p class="admonition-title">Sintassi - Gestione In locale</p>
+<p><strong>Gestione In locale</strong> (oppure <em>In-House</em> o anche <em>on-premises</em>)</p>
+<p>Modello in cui un'organizzazione acquista, installa e gestisce la propria infrastruttura hardware (server, storage, apparati di rete) all'interno dei propri locali fisici (uffici, sala server dedicata).</p>
+</div>
+<!-- REVIEW: tipo di box da confermare -->
+
+<p><strong>Come funziona:</strong> L'azienda è responsabile di tutto il ciclo di vita dell'hardware: acquisto, installazione, configurazione, manutenzione, aggiornamento e smaltimento. Il personale IT interno gestisce il sistema operativo, il software applicativo, la sicurezza fisica e logica, l'alimentazione elettrica (spesso con gruppi di continuità), il raffreddamento e la connettività di rete interna ed esterna.</p>
+<div class="admonition info">
+<p class="admonition-title">Sintassi - Vantaggi</p>
+<p><strong>Vantaggi</strong> <strong>Svantaggi</strong></p>
+<ul>
+<li>
+<p><strong>Controllo Totale:</strong> L'azienda ha il pieno controllo sull'hardware, sul software, sui dati e sulle policy di sicurezza.</p>
+</li>
+<li>
+<p><strong>Personalizzazione:</strong> Possibilità di configurare l'hardware e il software in modo estremamente specifico per le proprie esigenze.</p>
+</li>
+<li>
+<p><strong>Sicurezza (per alcuni aspetti):</strong> I dati risiedono fisicamente all'interno dell'azienda, il che può essere percepito come più sicuro o richiesto da normative specifiche per dati sensibili. L'accesso fisico è controllato direttamente.</p>
+</li>
+<li>
+<p><strong>Prestazioni (per accesso locale):</strong> L'accesso ai server dalla rete locale (LAN) può essere estremamente veloce, non dipendendo dalla qualità della connessione Internet esterna.</p>
+</li>
+<li>
+<p><strong>Indipendenza dai fornitori (hardware):</strong> Una volta acquistato, l'hardware è di proprietà, senza dipendenze da canoni di noleggio per l'infrastruttura fisica.</p>
+</li>
+</ul>
+<!-- -->
+<ul>
+<li>
+<p><strong>Costi Iniziali Elevati (CapEx):</strong> Richiede un investimento iniziale significativo per l'acquisto di server, licenze software, apparati di rete e infrastrutture di supporto (alimentazione, raffreddamento).</p>
+</li>
+<li>
+<p><strong>Costi Operativi (OpEx):</strong> Costi continui per energia elettrica, manutenzione hardware, aggiornamenti software, personale IT qualificato per la manutenzione del sistema.</p>
+</li>
+<li>
+<p><strong>Scalabilità Complessa:</strong> Aumentare le risorse (CPU, RAM, storage) richiede l'acquisto e l'installazione di nuovo hardware, un processo che può essere lento e costoso. Ridurre le risorse è difficile (l'hardware acquistato rimane).</p>
+</li>
+<li>
+<p><strong>Manutenzione:</strong> Richiede personale dedicato per monitoraggio, aggiornamenti, backup, gestione guasti.</p>
+</li>
+<li>
+<p><strong>Spazio Fisico:</strong> Necessità di locali adeguati (sale server) con sistemi di raffreddamento e alimentazione dedicati.</p>
+</li>
+<li>
+<p><strong>Disaster Recovery/Business Continuity:</strong> Implementare soluzioni efficaci richiede infrastrutture ridondate, spesso in sedi separate, aumentando ulteriormente i costi e la complessità.</p>
+</li>
+</ul>
+</div>
+<!-- REVIEW: tipo di box da confermare -->
+
+<h3 id="il-server-in-cloud-cloud-computing">Il Server in Cloud (Cloud Computing)<a class="headerlink" href="#il-server-in-cloud-cloud-computing" title="Permanent link">&para;</a></h3>
+<p>Il Cloud Computing rappresenta un paradigma diverso, basato sull'erogazione di risorse IT come servizio tramite Internet.</p>
+<div class="admonition info">
+<p class="admonition-title">Sintassi - Cloud Computing</p>
+<p><strong>Cloud Computing</strong></p>
+<p>Modello che permette l'accesso on-demand tramite la rete a un insieme condiviso di risorse di calcolo configurabili (es. reti, server, storage, applicazioni, servizi) che possono essere rapidamente erogate e rilasciate con minimo sforzo di gestione o interazione con il provider.</p>
+</div>
+<!-- REVIEW: tipo di box da confermare -->
+
+<p><strong>Come funziona:</strong> Invece di acquistare e gestire hardware fisico, le aziende affittano le risorse di cui necessitano da un provider Cloud (come AWS, Google Cloud, Microsoft Azure, Aruba Cloud, ecc.). L'accesso a queste risorse avviene tramite Internet. Il modello di costo è tipicamente <strong>pay-as-you-go</strong>, ovvero si paga solo per le risorse effettivamente consumate e per il tempo di utilizzo. Il provider si occupa della gestione dell'infrastruttura fisica sottostante (data center, server fisici, rete, raffreddamento, alimentazione).</p>
+<div class="admonition info">
+<p class="admonition-title">Sintassi - Vantaggi</p>
+<p><strong>Vantaggi</strong> <strong>Svantaggi</strong></p>
+<ul>
+<li>
+<p><strong>Scalabilità ed Elasticità:</strong> Possibilità di aumentare o diminuire le risorse (CPU, RAM, storage) rapidamente e facilmente in base alle necessità, pagando solo per ciò che si usa.</p>
+</li>
+<li>
+<p><strong>Costi Iniziali Ridotti:</strong> Nessun investimento iniziale in hardware (modello OpEx predominante).</p>
+</li>
+<li>
+<p><strong>Accessibilità:</strong> Le risorse sono accessibili da qualsiasi luogo tramite Internet.</p>
+</li>
+<li>
+<p><strong>Manutenzione Ridotta:</strong> Il provider gestisce l'infrastruttura fisica, gli aggiornamenti hardware, la manutenzione dei data center.</p>
+</li>
+<li>
+<p><strong>Affidabilità e Disponibilità:</strong> I grandi provider cloud offrono infrastrutture ridondate e Service Level Agreement (SLA) che garantiscono elevati livelli di uptime.</p>
+</li>
+<li>
+<p><strong>Disaster Recovery / Business Continuity:</strong> Facilità nel configurare soluzioni di backup e ripristino in diverse aree geografiche.</p>
+</li>
+</ul>
+<!-- -->
+<ul>
+<li>
+<p><strong>Costi Operativi a Lungo Termine:</strong> Se non gestiti attentamente, i costi ricorrenti (OpEx) possono diventare significativi.</p>
+</li>
+<li>
+<p><strong>Minore Controllo:</strong> Controllo limitato o nullo sull'hardware fisico sottostante e sulle policy operative del data center del provider.</p>
+</li>
+<li>
+<p><strong>Dipendenza dal Provider (Vendor Lock-in):</strong> Migrare da un provider cloud a un altro può essere complesso e costoso.</p>
+</li>
+<li>
+<p><strong>Sicurezza e Conformità:</strong> La responsabilità della sicurezza è condivisa tra provider e cliente. È necessario comprendere bene il modello di responsabilità e assicurarsi che il provider rispetti le normative richieste (es. GDPR).</p>
+</li>
+<li>
+<p><strong>Dipendenza dalla Connettività:</strong> Le prestazioni e l'accessibilità dipendono interamente dalla qualità e stabilità della connessione Internet.</p>
+</li>
+</ul>
+</div>
+<!-- REVIEW: tipo di box da confermare -->
+
+<h4 id="modelli-di-servizio-cloud"><strong>Modelli di Servizio Cloud:</strong><a class="headerlink" href="#modelli-di-servizio-cloud" title="Permanent link">&para;</a></h4>
+<p>Il Cloud si articola principalmente in tre modelli di servizio:</p>
+<ul>
+<li>
+<p><strong>IaaS (Infrastructure as a Service):</strong> Il provider fornisce le risorse <strong>infrastrutturali</strong> fondamentali (macchine virtuali, storage, reti). Il cliente ha il controllo sul sistema operativo, sullo storage, sulle applicazioni installate e, potenzialmente, su alcuni componenti di rete (es. firewall virtuali). È il modello più flessibile e quello più simile alla gestione di server tradizionali, ma senza l'onere dell'hardware fisico.</p>
+</li>
+<li>
+<p><strong>PaaS (Platform as a Service):</strong> Il provider fornisce una <strong>piattaforma</strong> che include sistema operativo, ambienti di programmazione, database e web server. Il cliente sviluppa e distribuisce le proprie applicazioni sulla piattaforma, senza doversi preoccupare dell'infrastruttura sottostante.</p>
+</li>
+<li>
+<p><strong>SaaS (Software as a Service):</strong> Il provider fornisce applicazioni <strong>software</strong> complete, accessibili via web browser o app dedicate (es. Gmail, Salesforce, Microsoft 365). Il cliente utilizza semplicemente il software, senza gestire né l'infrastruttura né la piattaforma.</p>
+</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">Sintassi - Approfondimento: Hosting e Housing nel Contesto Cloud (IaaS)</p>
+<p><strong>Approfondimento: Hosting e Housing nel Contesto Cloud (IaaS)</strong></p>
+<p>Come si collocano i concetti di Hosting e Housing visti in precedenza nel mondo Cloud? Principalmente nel modello IaaS:</p>
+<ul>
+<li>
+<p><strong>Hosting nel Cloud (IaaS):</strong> Quando si affitta una Macchina Virtuale (VM) preconfigurata da un provider cloud, con un sistema operativo già installato e risorse definite (CPU, RAM, disco), l'esperienza è molto simile a quella di un Hosting VPS (Virtual Private Server) o Dedicato. Si gestisce il software sulla macchina virtuale, ma l'infrastruttura virtuale (e quella fisica sottostante) è gestita dal provider.</p>
+</li>
+<li>
+<p><strong>Housing nel Cloud (IaaS):</strong> Il concetto di "housing" fisico (portare il proprio server) non si applica direttamente al cloud pubblico. Tuttavia, il livello di controllo offerto da IaaS può avvicinarsi a quello desiderato in uno scenario di housing. Si possono creare VM da zero installando il proprio sistema operativo, configurare reti virtuali complesse (VPC - Virtual Private Cloud), gestire storage avanzato e policy di sicurezza granulari. Si ha un controllo quasi totale sull'ambiente virtuale, pur senza possedere l'hardware fisico, replicando la flessibilità dell'housing ma sull'infrastruttura del provider. Alcuni provider offrono anche "Bare Metal Servers" nel cloud, server fisici dedicati affittati dal cliente, che si avvicinano ulteriormente al concetto di housing, ma sono gestiti tramite le interfacce del cloud provider.</p>
+</li>
+</ul>
+</div>
+<!-- REVIEW: tipo di box da confermare -->
+
+<h3 id="confronto-diretto-locale-vs-cloud">Confronto Diretto: Locale vs. Cloud<a class="headerlink" href="#confronto-diretto-locale-vs-cloud" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Caratteristica</th>
+<th><strong>Server in Locale (On-Premises)</strong></th>
+<th><strong>Server in Cloud</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Costi Iniziali</strong></td>
+<td>Elevati (CapEx)</td>
+<td>Bassi (OpEx)</td>
+</tr>
+<tr>
+<td><strong>Costi Ricorrenti</strong></td>
+<td>Manutenzione, energia, personale IT</td>
+<td>Canoni basati sul consumo (OpEx)</td>
+</tr>
+<tr>
+<td><strong>Controllo</strong></td>
+<td>Totale (Hardware &amp; Software)</td>
+<td>Limitato sull'hardware, variabile sul software (IaaS/PaaS/SaaS)</td>
+</tr>
+<tr>
+<td><strong>Scalabilità</strong></td>
+<td>Lenta, costosa, pianificata</td>
+<td>Rapida, flessibile, on-demand</td>
+</tr>
+<tr>
+<td><strong>Manutenzione</strong></td>
+<td>A carico dell'azienda (Hardware &amp; Software)</td>
+<td>A carico del provider (Hardware), condivisa (Software)</td>
+</tr>
+<tr>
+<td><strong>Sicurezza Fisica</strong></td>
+<td>Responsabilità dell'azienda</td>
+<td>Responsabilità del provider</td>
+</tr>
+<tr>
+<td><strong>Sicurezza Logica</strong></td>
+<td>Responsabilità dell'azienda</td>
+<td>Responsabilità condivisa (Provider/Cliente)</td>
+</tr>
+<tr>
+<td><strong>Accessibilità</strong></td>
+<td>Primariamente locale (accesso remoto configurabile)</td>
+<td>Globale via Internet</td>
+</tr>
+<tr>
+<td><strong>Competenze Richieste</strong></td>
+<td>Elevate (Gestione HW, SW, Rete, Sicurezza)</td>
+<td>Variabili (Configurazione Cloud, Sviluppo, DevOps)</td>
+</tr>
+<tr>
+<td><strong>Disaster Recovery</strong></td>
+<td>Complesso e costoso da implementare</td>
+<td>Più semplice ed economico da configurare</td>
+</tr>
+</tbody>
+</table>
+<h4 id="conclusioni">Conclusioni<a class="headerlink" href="#conclusioni" title="Permanent link">&para;</a></h4>
+<p>La scelta tra un'infrastruttura server on-premises e una basata su cloud non ha una risposta univoca "migliore". Dipende da una valutazione attenta delle esigenze specifiche dell'organizzazione:</p>
+<ul>
+<li>
+<p><strong>On-Premises</strong> può essere preferibile per aziende con requisiti di controllo molto stringenti, dati estremamente sensibili, normative rigide, personale IT altamente qualificato e un budget iniziale consistente, o dove la latenza verso i servizi locali è un fattore critico.</p>
+</li>
+<li>
+<p><strong>Cloud</strong> è spesso la scelta ideale per startup, aziende in crescita, organizzazioni che necessitano di flessibilità e scalabilità rapide, chi vuole ridurre l'investimento iniziale e delegare la gestione dell'infrastruttura fisica, e per sfruttare servizi innovativi (AI, Big Data) offerti dai provider.</p>
+</li>
+</ul>
+<p>Esistono anche <strong>soluzioni ibride</strong>, che combinano infrastrutture on-premises con servizi cloud, cercando di ottenere il meglio da entrambi i mondi (es. mantenendo dati sensibili in locale e utilizzando il cloud per scalabilità o disaster recovery). La comprensione delle differenze fondamentali è il primo passo per una scelta strategica consapevole.</p>
+<h2 id="72-domande-di-comprensione">7.2. Domande di comprensione<a class="headerlink" href="#72-domande-di-comprensione" title="Permanent link">&para;</a></h2>
+<h4 id="domande-a-crocette_1">Domande a crocette<a class="headerlink" href="#domande-a-crocette_1" title="Permanent link">&para;</a></h4>
+<p><strong>1. Un'azienda vuole permettere ai propri dipendenti di lavorare da casa collegandosi alla rete aziendale in modo sicuro, come se fossero in ufficio. Quale tecnologia è più indicata per questo scopo?</strong></p>
+<p>A) L'acquisto di un abbonamento Internet con fibra ottica FTTH.</p>
+<blockquote>
+<p>B) L'installazione di più Access Point Wi-Fi.</p>
+<p>C) L'utilizzo di una VPN (Virtual Private Network).</p>
+<p>D) Un server DNS dedicato.</p>
+</blockquote>
+<p><strong>2. Qual è il ruolo principale di un ISP (Internet Service Provider)?</strong></p>
+<p>A) Creare i nomi di dominio per i siti web.</p>
+<blockquote>
+<p>B) Gestire la sicurezza fisica dei data center della dorsale Internet.</p>
+<p>C) Fornire l'hardware server per le aziende (housing).</p>
+<p>D) Fornire la connessione a Internet agli utenti finali (case, aziende) collegandoli alla rete globale.</p>
+</blockquote>
+<p><strong>3. Cosa si intende quando si dice che Internet è una "rete di reti"?</strong></p>
+<p>A) Che Internet è formata dall'interconnessione di tante reti più piccole (aziendali, degli ISP, ecc.) collegate tra loro tramite router.</p>
+<blockquote>
+<p>B) Che esistono due versioni di Internet: una cablata e una wireless.</p>
+<p>C) Che tutta Internet usa solo cavi in fibra ottica sottomarini.</p>
+<p>D) Che ogni sito web ha una propria rete interna separata.</p>
+</blockquote>
+<p><strong>4. Quando digiti "www.esempio.com" nel browser, cosa fa principalmente il sistema DNS?</strong></p>
+<p>A) Assegna un indirizzo IP temporaneo al tuo computer.</p>
+<blockquote>
+<p>B) Verifica se hai pagato l'abbonamento per visitare quel sito.</p>
+<p>C) Controlla se il sito è sicuro e protetto da firewall.</p>
+<p>D) Trova l'indirizzo IP numerico corrispondente al nome "www.esempio.com" per permettere al computer di localizzare il server.</p>
+</blockquote>
+<p><strong>5. In cosa consiste principalmente la "dorsale Internet" (Internet backbone)?</strong></p>
+<p>A) Nelle principali vie di comunicazione ad alta velocità (spesso in fibra ottica, anche sottomarine) che collegano i nodi principali della rete globale.</p>
+<blockquote>
+<p>B) Nei server che ospitano i siti web più importanti.</p>
+<p>C) Nel protocollo Wi-Fi che permette la connessione senza fili.</p>
+<p>D) Nell'insieme di tutti i router domestici connessi nel mondo.</p>
+</blockquote>
+<p><strong>6. Qual è uno dei principali vantaggi dell'avere un server "in locale" (On-Premises) rispetto a usare un servizio Cloud?</strong></p>
+<p>A) Scalabilità immediata delle risorse senza acquisti aggiuntivi.</p>
+<blockquote>
+<p>B) Completo controllo diretto sull'hardware fisico, sul software e sulla sicurezza dei dati all'interno dell'azienda.</p>
+<p>C) Costi iniziali molto più bassi per l'hardware.</p>
+<p>D) Manutenzione dell'hardware e del data center gestita da un fornitore esterno.</p>
+</blockquote>
+<p><strong>7. Quale modello di servizio Cloud (come IaaS, PaaS, SaaS) offre il maggior livello di controllo sull'infrastruttura virtuale (sistema operativo, rete virtuale, storage), simile a gestire un proprio server ma senza possedere l'hardware fisico?</strong></p>
+<p>A) SaaS (Software as a Service)</p>
+<blockquote>
+<p>B) BPaaS (Business Process as a Service)</p>
+<p>C) IaaS (Infrastructure as a Service)</p>
+<p>D) PaaS (Platform as a Service)</p>
+</blockquote>
+<p><strong>8. Un vantaggio chiave dell'usare server in Cloud rispetto a quelli on-premises è:</strong></p>
+<p>A) Il pieno controllo fisico sulla posizione geografica esatta dei server.</p>
+<blockquote>
+<p>B) Non dipendere mai dalla connessione Internet per accedere ai dati.</p>
+<p>C) Avere la certezza che i costi mensili saranno sempre fissi e prevedibili.</p>
+<p>D) La facilità e rapidità con cui si possono aumentare o diminuire le risorse (scalabilità) pagando solo per quello che si usa.</p>
+</blockquote>
+<p><strong>9. Se un'azienda decide di usare un servizio di Housing/Colocation (come descritto nel capitolo precedente), cosa sta effettivamente facendo?</strong></p>
+<p>A) Affittando spazio fisico in un data center esterno per installare e gestire i propri server.</p>
+<blockquote>
+<p>B) Utilizzando un software specifico via Internet fornito da un provider (SaaS).</p>
+<p>C) Creando una rete Wi-Fi aziendale sicura.</p>
+<p>D) Affittando un server di proprietà del provider, gestito dal provider stesso.</p>
+</blockquote>
+<p><strong>10. Considerando l'accesso remoto sicuro tramite VPN, cosa succede al traffico internet dell'utente mentre è connesso alla VPN aziendale?</strong></p>
+<p>A) La VPN aumenta la velocità della connessione internet dell'utente.</p>
+<blockquote>
+<p>B) Il traffico passa attraverso la rete aziendale e appare su Internet come se provenisse dalla sede dell'azienda.</p>
+<p>C) Il traffico internet continua a passare direttamente dall'ISP dell'utente, senza coinvolgere la rete aziendale.</p>
+<p>D) Il traffico internet viene bloccato per motivi di sicurezza.</p>
+</blockquote>
+<h4 id="domande-verofalso_1">Domande Vero/Falso<a class="headerlink" href="#domande-verofalso_1" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<p>Una VPN (Virtual Private Network) rende la navigazione su Internet meno sicura perché aggiunge passaggi intermedi. <strong>V/F</strong></p>
+</li>
+<li>
+<p>Gli ISP (Internet Service Provider) sono le aziende che creano fisicamente i cavi sottomarini della dorsale Internet. <strong>V/F</strong></p>
+</li>
+<li>
+<p>Il sistema DNS serve a tradurre l'indirizzo IP numerico di un server nel nome di dominio corrispondente (es. da 142.251.163.94 a www.google.it). <strong>V/F</strong></p>
+</li>
+<li>
+<p>Quando le autorità bloccano un sito illegale, spesso chiedono agli ISP italiani di rimuovere l'associazione tra il nome del sito e il suo indirizzo IP dal DNS. <strong>V/F</strong></p>
+</li>
+<li>
+<p>Scegliere una soluzione "On-Premises" (server in locale) significa avere costi iniziali molto bassi ma canoni mensili elevati per l'affitto dell'hardware. <strong>V/F</strong></p>
+</li>
+<li>
+<p>Il Cloud Computing permette alle aziende di affittare risorse informatiche (come server o storage) da un fornitore esterno, pagando in base all'uso. <strong>V/F</strong></p>
+</li>
+<li>
+<p>Il modello IaaS (Infrastructure as a Service) nel Cloud è quello che offre meno controllo all'utente, fornendo solo software pronti all'uso. <strong>V/F</strong></p>
+</li>
+<li>
+<p>Uno dei principali vantaggi del Cloud è la scalabilità, cioè la possibilità di aumentare o diminuire facilmente le risorse necessarie. <strong>V/F</strong></p>
+</li>
+<li>
+<p>Utilizzando un server in Cloud, l'azienda non deve più preoccuparsi della manutenzione dell'hardware fisico su cui girano le sue applicazioni. <strong>V/F</strong></p>
+</li>
+<li>
+<p>La "dorsale Internet" (backbone) è costituita principalmente da connessioni wireless a corto raggio tra i vari continenti. <strong>V/F</strong></p>
+</li>
+</ol>
+<h4 id="domande-di-rielaborazione_1">Domande di rielaborazione<a class="headerlink" href="#domande-di-rielaborazione_1" title="Permanent link">&para;</a></h4>
+<p><u>Queste domande testano la vostra conoscenza e la vostra abilità di rielaborazione in un formato discorsivo, come potrebbe essere una domanda di un'interrogazione o una traccia di un esame di stato</u></p>
+<ol>
+<li>
+<p>Descrivi come progetteresti la struttura di base di <strong>una rete locale (LAN)</strong> per una piccola azienda che necessita di: accesso a Internet per tutti i dipendenti, una rete Wi-Fi per ospiti e dispositivi mobili, una stampante di rete condivisa e un server interno per i file aziendali. Specifica quali dispositivi di rete (Switch, Router, AP, Firewall) utilizzeresti e come li collegheresti.</p>
+</li>
+<li>
+<p>Spiega cos'è una <strong>VPN (Virtual Private Network)</strong> e come funziona il concetto di "tunneling". Descrivi almeno due scenari di utilizzo principali per una VPN (es. telelavoro, accesso a contenuti con restrizioni geografiche ).</p>
+</li>
+<li>
+<p>Descrivi la <strong>struttura generale di Internet</strong>, includendo i concetti di dorsale Internet (backbone), il ruolo degli ISP (Internet Service Provider) e come Internet possa essere vista come una "rete di reti" interconnesse.</p>
+</li>
+<li>
+<p>Spiega la funzione del <strong>DNS</strong> (Domain Name System). Descrivi il processo che avviene quando un utente digita un nome di dominio (es. www.google.it) nel browser, illustrando come il DNS interviene per permettere la connessione al server corretto.</p>
+</li>
+<li>
+<p>Confronta l'approccio "<strong>Server in locale</strong>" (On-Premises) con l'approccio "<strong>Server in Cloud</strong>" per la gestione dell'infrastruttura IT aziendale. Discuti vantaggi e svantaggi di ciascuna soluzione in termini di costi (iniziali e operativi), controllo, scalabilità, manutenzione e sicurezza.</p>
+</li>
+</ol>
+<p><strong>Risposte corrette. Evidenziare con il mouse per vedere le risposte</strong></p>
+<p><strong>Crocette</strong></p>
+<p><strong>1.</strong> C <strong>2.</strong> D <strong>3.</strong> A <strong>4.</strong> D <strong>5.</strong> A <strong>6.</strong> B <strong>7.</strong> C <strong>8.</strong> D <strong>9.</strong> A <strong>10.</strong> B</p>
+<p><strong>Vero/Falso:</strong></p>
+<ol>
+<li>
+<p><strong>Falso</strong> (Una VPN crea una connessione sicura e cifrata su una rete pubblica come Internet).</p>
+</li>
+<li>
+<p><strong>Falso</strong> (Gli ISP collegano gli utenti alla dorsale, ma non necessariamente costruiscono la dorsale stessa).</p>
+</li>
+<li>
+<p><strong>Falso</strong> (Il DNS fa il contrario: traduce il nome di dominio in indirizzo IP).</p>
+</li>
+<li>
+<p><strong>Vero</strong>.</p>
+</li>
+<li>
+<p><strong>Falso</strong> (On-Premises ha costi iniziali elevati per l'acquisto hardware; è il Cloud che ha tipicamente bassi costi iniziali e canoni ricorrenti).</p>
+</li>
+<li>
+<p><strong>Vero</strong>.</p>
+</li>
+<li>
+<p><strong>Falso</strong> (IaaS offre il massimo controllo sull'infrastruttura virtuale; è SaaS che fornisce software pronti all'uso).</p>
+</li>
+<li>
+<p><strong>Vero</strong>.</p>
+</li>
+<li>
+<p><strong>Vero</strong> (La manutenzione dell'hardware fisico è responsabilità del provider Cloud).</p>
+</li>
+<li>
+<p><strong>Falso</strong> (La dorsale usa principalmente collegamenti ad alta velocità via cavo, spesso fibra ottica, anche sottomarini).</p>
+</li>
+</ol>
+<h2 id="73-i-protocolli-di-internet">7.3 I protocolli di internet<a class="headerlink" href="#73-i-protocolli-di-internet" title="Permanent link">&para;</a></h2>
+<p>Abbiamo stabilito nel capitolo 7.1 quali sono gli strumenti per realizzare una rete e nel 7.2 come questi strumenti si utilizzano insieme per la struttura fisica della rete locale e internet.</p>
+<p>Vediamo adesso quali sono le regole che governano le comunicazioni su internet, cominciando dal concetto di protocollo di comunicazione</p>
+<div class="admonition abstract">
+<p class="admonition-title">Definizione</p>
+<p>Un <strong>protocollo di comunicazione</strong> è un insieme di regole descritte in maniera formale che definiscono le modalità di comunicazione tra due o più interlocutori.</p>
+<p>Nel caso di un protocollo di comunicazione che opera su una rete di computer si parla di <strong>protocollo di rete</strong></p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Sintassi - La comunicazione in classe</p>
+<p><strong>La comunicazione in classe</strong></p>
+<p>Un esempio di protocollo di comunicazione è quello che regolamenta la comunicazione in classe. Il docente parla, lo studente che vuole intervenire alza la mano. Lo studente può parlare soltanto quando il docente gli passa la parola. Alla fine dell'intervento la parola torna al docente.</p>
+<p>È una procedura ben descritta e nota a tutte le parti in gioco che permette di regolare la comunicazione ed evitare confusione o perdita di informazioni.</p>
+<p><strong>Il Walkie Talkie</strong></p>
+<p>Un protocollo di comunicazione molto noto è quello che regolamenta l'utilizzo del walkie talkie. Il walkie-talkie è un dispositivo ricetrasmittente che funziona soltanto in uno dei due versi per volta (mentre trasmette non riceve, mentre riceve non trasmette).</p>
+<p>Per poter comunicare in maniera che ci sia ordine e non si perdano i messaggi il protocollo è:</p>
+<ul>
+<li>
+<p>Il primo utente inizia a trasmettere premendo il pulsante. Parla e quando ha finito annuncia il termine del suo intervento con la parola <strong>passo.</strong> A quel punto lascia il pulsante e si mette in modalità di ricezione.</p>
+</li>
+<li>
+<p>Sentita la parola chiave <strong>passo</strong>, l'altro utente sa di avere il via libera e può iniziare a trasmettere. A sua volta dirà <strong>passo</strong> alla fine del suo intervento.</p>
+</li>
+<li>
+<p>Si continua così fino al termine della conversazione in cui si conclude l'intervento con <strong>passo e chiudo.</strong></p>
+</li>
+</ul>
+</div>
+<!-- REVIEW: tipo di box da confermare -->
+
+<p>Nel caso della rete è fondamentale regolamentare il flusso di dati per dare ordine a quello che sarebbe un caos di tentate comunicazioni contemporanee:</p>
+<p><strong>Requisiti di un buon protocollo di rete</strong><br />
+Bisogna affrontare la grossa sfida di cercare di mettere in comunicazione <strong>dispositivi di tipologia diversa</strong> (smartphone, PC, tablet, ecc..) con hardware diverso, sistema operativo diverso (Mac, Android, Windows, ecc..), tecnologia di trasmissione diversa (cavo, fibra ottica, Wi-Fi, ecc..) su cui vogliamo far comunicare software.</p>
+<p>Vorremmo anche che la connessione sia accurata, quindi vogliamo implementare un sistema di <strong>controllo degli errori</strong> che permetta al destinatario di sapere se il dato è arrivato a destinazione integro.</p>
+<p>Vorremmo anche che la connessione sia sicura, quindi bisogna implementare un sistema di <strong>cifratura</strong> che prevenga le intrusioni.</p>
+<p>Vorremmo poi consentire <strong>più trasmissioni contemporaneamente</strong>. L'invio di un file che richiede 5 minuti non può monopolizzare la connessione e bloccare tutti gli altri invii.</p>
+<p>Dati tutti questi requisiti vediamo quali alternative sono state proposte per rispondere alle esigenze. Ne vediamo due: il modello ISO/OSI e il modello TCP/IP</p>
+<h3 id="731-isoosi">7.3.1 ISO/OSI<a class="headerlink" href="#731-isoosi" title="Permanent link">&para;</a></h3>
+<p>Il <strong>modello ISO/OSI</strong> (International Organization for Standardization/Open Systems Interconnection) è un modello che cerca di dare uno standard di comunicazione sulle reti informatiche introducendo il concetto di <strong>struttura a livelli</strong> (in italiano sono anche chiamati strati)<strong>.</strong></p>
+<p>Il modello è stato sviluppato nel 1984 dall'ISO (International Organization for Standardization) ed è da allora considerato lo <strong>standard teorico</strong> per tutti i protocolli di comunicazioni in rete. <img alt="" src="../img/cap07/media/image3.png" /></p>
+<h4 id="i-7-livelli-di-isoosi">I 7 livelli di ISO/OSI<a class="headerlink" href="#i-7-livelli-di-isoosi" title="Permanent link">&para;</a></h4>
+<p>Il modello ISO/OSI si basa su <strong>una struttura a 7 livelli</strong> dal più alto, quello dell'applicazione, al più basso, quello fisico. I livelli sono numerati dal basso all'alto: Fisico (in basso) è il numero 1, Applicazione (in alto) è il numero 7,.<br />
+Dato che i livelli sono in pila, si fa spesso riferimento all'insieme dei 7 livelli come <strong>pila ISO/OSI</strong> o <strong>stack ISO/OSI</strong></p>
+<p>I 7 livelli sono pensati in modo da rendere <strong>flessibile</strong> il processo: vengono eseguiti in sequenza, uno dopo l'altro, e ogni livello interagisce solo con i livelli ad esso adiacenti.</p>
+<p>Ogni livello si occupa di <strong>una fase della comunicazione</strong>, prende l'output del livello ad esso precedente e passa i risultati al livello successivo in una specie di catena di montaggio.</p>
+<p>Questa struttura a livelli rende il protocollo estremamente <strong>flessibile</strong> perché ogni livello si occupa <u>di un solo compito</u> ed è indipendente dagli altri nel funzionamento</p>
+<div class="admonition info">
+<p class="admonition-title">Sintassi - Flessibilità dei livelli</p>
+<p><strong>Flessibilità dei livelli</strong></p>
+<p>Prendiamo ad esempio la trasmissione di dati su <strong>Whatsapp</strong> (o Google Chrome o Fortnite, una qualunque applicazione in realtà).</p>
+<p>Whatsapp agisce <u>esclusivamente</u> al livello Applicazione (livello 7 della pila ISO/OSI). <u>Non deve preoccuparsi</u> di come si effettua l'indirizzamento dei pacchetti (livello Rete, livello 3 della pila) o se i dispositivi sono connessi alla rete tramite Wi-Fi, Ethernet, ecc.. (livello Fisico, livello 1 della pila).</p>
+</div>
+<!-- REVIEW: tipo di box da confermare -->
+
+<p>Non vedremo nel dettaglio lo scopo di ognuno dei 7 livelli: come detto ISO/OSI è un <strong>modello teorico</strong>. È fondamentale per la comprensione completa delle reti, ma in questo manuale verrà approfondito solo TCP/IP, che implementa i livelli di ISO/OSI ed è diventato lo <strong>standard de facto</strong> di tutte le comunicazioni su internet.</p>
+<h3 id="732-tcpip">7.3.2 TCP/IP<a class="headerlink" href="#732-tcpip" title="Permanent link">&para;</a></h3>
+<p>La suite di protocolli <strong>TCP/IP</strong> implementa l'architettura teorica di ISO/OSI riducendo il numero di livelli da 7 a 4. Prima di vedere il dettaglio dei 4 livelli vediamo una Panoramica.</p>
+<p>Il modello <strong>TCP/IP</strong> prende il nome dai due protocolli (TCP e IP) che occupano il livello 2 e 3 della pila. Sono stati i primi ad essere utilizzati per le trasmissioni su internet e sono alla base di tutte le comunicazioni.</p>
+<h4 id="panoramica-del-protocollo">Panoramica del protocollo<a class="headerlink" href="#panoramica-del-protocollo" title="Permanent link">&para;</a></h4>
+<p>L'invio di dati sulla rete porta diverse sfide. Due tra queste sono</p>
+<ul>
+<li>
+<p><strong>Gestione della larghezza di banda</strong>: l'invio di dati sulla rete non deve congestionare la connessione e monopolizzare tutta la larghezza di banda.<br />
+  Esempio: se l'invio richiede 10 minuti, non possiamo avere tutto il restante traffico bloccato per 10 minuti.</p>
+</li>
+<li>
+<p><strong>Fault-tolerance</strong> (resistenza agli errori)<br />
+  la trasmissione dei dati sulla rete è spesso soggetta ad errori, per interferenza, scarso segnale del Wi-Fi, scarsa larghezza di banda, ecc.. Occorre avere un modo per verificare e correggere gli errori</p>
+</li>
+</ul>
+<h5 id="la-divisione-in-pacchetti">La divisione in pacchetti<a class="headerlink" href="#la-divisione-in-pacchetti" title="Permanent link">&para;</a></h5>
+<p>Queste richieste sarebbero impossibili da soddisfare se inviassimo i dati in un blocco unico. <u>Occorre dividere i dati in segmenti più piccoli</u> (che chiamiamo <strong>pacchetti)</strong> e inviare ognuno di questi pacchetti separatamente</p>
+<p><img alt="" src="../img/cap07/media/image16.gif" /></p>
+<p>I vantaggi sono diversi:</p>
+<ul>
+<li><strong>Connessioni multiple.</strong><br />
+  L'invio in diversi <strong>pacchetti</strong> fa sì che si possano gestire molte connessioni contemporaneamente, alternando l'invio dei pacchetti di diverse trasmissioni.  </li>
+</ul>
+<p><strong>Esempio:</strong> navigare sul web non è impedito dall'invio di un video su WhatsApp. Se durante l'invio del video si richiede una pagina web, l'invio del video viene temporaneamente sospeso per permettere al browser di caricare la pagina. Questo è possibile perché il video non viene inviato come un unico grande file, ma è suddiviso in numerosi pacchetti. Così, l'invio può essere interrotto dopo un pacchetto e ripreso successivamente senza perdere dati.</p>
+<ul>
+<li>
+<p><strong>Correzione degli errori.</strong><br />
+  Nel caso di un errore durante l'invio, possiamo scartare il solo pacchetto in cui c'è stato l'errore invece che ricominciare da capo l'intero invio.</p>
+</li>
+<li>
+<p><strong>Migliore gestione della rete.<br />
+</strong>Dividendo il messaggio in pacchetti possiamo inviare i pacchetti contemporaneamente su più strade. Ogni pacchetto troverà la strada più libera in quel momento.</p>
+</li>
+</ul>
+<h5 id="la-struttura-a-livelli">La struttura a livelli<a class="headerlink" href="#la-struttura-a-livelli" title="Permanent link">&para;</a></h5>
+<p>Come il precedente modello ISO/OSI, TCP/IP è strutturato su livelli. TCP/IP usa 4 livelli (o 5 secondo alcuni manuali).</p>
+<p>Nel seguente schema vediamo sulla sinistra <strong>la pila ISO/OSI</strong>, con i suoi 7 livelli e sulla destra il protocollo <strong>TCP/IP</strong>, con i suoi 4 livelli. <u>Notare la corrispondenza con i 7 livelli di ISO/OSI.</u> <img alt="" src="../img/cap07/media/image5.jpg" /></p>
+<p><strong>I 4 livelli sono Applicazione, Trasporto, Internet e Accesso alla rete.</strong></p>
+<p>Durante l'invio le quattro fasi vengono effettuate in sequenza, una dopo l'altra.<br />
+Alla ricezione vengono eseguite le quattro fasi nell'ordine inverso.</p>
+<p><img alt="" src="../img/cap07/media/image37.png" /></p>
+<p><strong>Invio</strong> (sul dispositivo del mittente)</p>
+<table>
+<thead>
+<tr>
+<th><strong>1.</strong></th>
+<th><strong>Applicazione</strong></th>
+<th>L'applicazione crea il <strong>messaggio</strong> da inviare (es: Chrome richiede una pagina).</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>2.</strong></td>
+<td><strong>Trasporto</strong></td>
+<td>Il messaggio viene diviso in <strong>segmenti</strong> di breve lunghezza.</td>
+</tr>
+<tr>
+<td><strong>3.</strong></td>
+<td><strong>Internet</strong></td>
+<td>Ad ogni segmento viene assegnato l'indirizzo IP del destinatario. Il segmento con l'indirizzo IP prende il nome di <strong>pacchetto</strong></td>
+</tr>
+<tr>
+<td><strong>4.</strong></td>
+<td><strong>Accesso alla rete</strong></td>
+<td>i pacchetti sono <u>fisicamente</u> <strong>inviati</strong> sulla rete. A questo livello troviamo tutta la parte fisica della rete (cavi, switch, Wi-Fi, ecc..)</td>
+</tr>
+</tbody>
+</table>
+<p><strong><br />
+Ricezione</strong> (sul dispositivo del destinatario)</p>
+<table>
+<thead>
+<tr>
+<th><strong>4.</strong></th>
+<th><strong>Accesso alla rete</strong></th>
+<th>I pacchetti sono <u>fisicamente</u> ricevuti sulla rete.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>3.</strong></td>
+<td><strong>Internet</strong></td>
+<td>Dai pacchetti viene rimosso l'indirizzo IP del destinatario, otteniamo i segmenti di breve lunghezza.</td>
+</tr>
+<tr>
+<td><strong>2.</strong></td>
+<td><strong>Trasporto</strong></td>
+<td>I segmenti vengono <strong>riordinati</strong> e riassemblati <em>(a seconda del protocollo scelto)</em></td>
+</tr>
+<tr>
+<td><strong>1.</strong></td>
+<td><strong>Applicazione:</strong></td>
+<td>L'applicazione <strong>riceve il messaggio</strong> inviato.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition abstract">
+<p class="admonition-title">Definizione</p>
+<p><strong>Approfondimento - L'incapsulamento</strong></p>
+<p>Nel dettaglio cosa fa ogni livello?</p>
+<p>Possiamo pensare al risultato di ogni livello come una scatola. Ad ogni passaggio vengono aggiunte delle informazioni e chiuse in una "scatola più grande", come una matrioska. Questo processo prende il nome di <strong>incapsulamento.</strong></p>
+<p><strong>L'animazione in questa risorsa video è il modo migliore per visualizzare il processo.<br />
+</strong><em><u>Nota: nell'animazione il modello TCP/IP è a 5 livelli. Gli ultimi due per noi sono accesso alla rete</u></em><strong><br />
+</strong></p>
+<p><a href="https://www.youtube.com/watch?v=FJIFfkpUO7o"><u>Data Encapsulation and De-encapsulation ( TCP/IP model ) Animation</u></a><br />
+<u>(video di 1 minuto e 17 secondi. Da guardare)</u></p>
+<p>Provando invece a fare una descrizione testuale avviene questo:</p>
+<p>All'invio:</p>
+<ul>
+<li>
+<p>Il livello <strong>applicazione</strong> crea i dati e li manda al livello trasporto.</p>
+</li>
+<li>
+<p>Il <strong>livello di trasporto</strong> divide questi dati in segmenti. In ognuno di questi aggiunge un header che contiene delle informazioni aggiuntive necessarie alla gestione dell'invio. "Chiude ognuno in una scatola" <em>(la scatola è il segmento)</em></p>
+</li>
+<li>
+<p>Il <strong>livello internet</strong> prende la "scatola" che arriva dal pacchetto, aggiunge un header che contiene delle informazioni aggiuntive necessarie all'indirizzamento e "chiude in una scatola" <em>(la scatola è il pacchetto)</em></p>
+</li>
+<li>
+<p>Il <strong>livello di accesso alla rete</strong> trasforma e invia il pacchetto tramite una sequenza di segnali 0 e 1, in base alla tecnologia di trasmissione utilizzata</p>
+</li>
+</ul>
+<p>Alla ricezione:</p>
+<ul>
+<li>
+<p>Il <strong>livello di accesso alla rete</strong> recupera i dati dalla rete, ottenendo il pacchetto</p>
+</li>
+<li>
+<p>Il <strong>livello internet</strong> "apre la scatola" e rimuove l'header con l'indirizzo IP, ottenendo il segmento</p>
+</li>
+<li>
+<p>Il <strong>livello di trasporto</strong> prende i segmenti ricevuti dal livello internet, rimuove l'header del trasporto, ricombina tutti i pacchetti e ottiene i dati che inoltra all'applicazione.</p>
+</li>
+<li>
+<p>Il livello <strong>applicazione</strong> legge i dati</p>
+</li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Definizione</p>
+<p><img alt="" src="../img/cap07/media/image24.jpg" /></p>
+<p>Possiamo vedere un esempio esplicativo con una metafora che spiega ogni livello paragonandolo all'invio di un messaggio di posta tra dirigenti aziendali.<br />
+<strong>INVIO:</strong></p>
+<ul>
+<li>
+<p><strong>Applicazione:</strong> è il dirigente che scrive il testo del messaggio</p>
+</li>
+<li>
+<p><strong>Trasporto:</strong> è la segretaria che mette il messaggio in una busta (creazione segmenti)</p>
+</li>
+<li>
+<p><strong>Internet:</strong> viene messo l'indirizzo del destinatario sulla busta (aggiunta indirizzi IP)</p>
+</li>
+<li>
+<p><strong>Accesso alla rete:</strong> è il livello fisico, dove viene effettivamente recapitato il messaggio. Qui abbiamo i camion, motorini, aeroplani della posta che fanno effettivamente spostare la lettera</p>
+</li>
+</ul>
+<p><strong>RICEZIONE:</strong></p>
+<ul>
+<li>
+<p><strong>Accesso alla rete:</strong> il postino arriva nella sede del destinatario con la lettera</p>
+</li>
+<li>
+<p><strong>Internet:</strong> la portineria accetta la lettera dopo aver verificato l'indirizzo</p>
+</li>
+<li>
+<p><strong>Trasporto:</strong> la lettera viene tolta dalla busta e infine</p>
+</li>
+<li>
+<p><strong>Applicazione:</strong> il dirigente riceve il messaggio</p>
+</li>
+</ul>
+</div>
+<h4 id="i-quattro-livelli-di-tcpip">I quattro livelli di TCP/IP<a class="headerlink" href="#i-quattro-livelli-di-tcpip" title="Permanent link">&para;</a></h4>
+<p>Vediamo adesso i quattro livelli nel dettaglio, uno per volta e vediamo, per ogni livello, quali sono i protocolli disponibili.</p>
+<p>Analizziamo questo schema riassuntivo. Vediamo:</p>
+<ul>
+<li>
+<p>Sulla sinistra <strong>la pila ISO/OSI</strong>, con i suoi 7 livelli</p>
+</li>
+<li>
+<p>Al centro il protocollo <strong>TCP/IP</strong>, con i suoi 4 livelli. Notare la corrispondenza con i 7 livelli di ISO/OSI.</p>
+</li>
+<li>
+<p>Sulla destra i <strong>protocolli effettivi</strong> che vengono utilizzati ad ogni livello.</p>
+</li>
+<li>
+<p><strong>Applicazione:</strong> sono indicati 6 protocolli, esempio di possibili applicazioni</p>
+</li>
+<li>
+<p><strong>Trasporto:</strong> i possibili protocolli sono TCP e UDP.</p>
+</li>
+<li>
+<p><strong>Internet:</strong> i possibili protocolli sono IPv4 e IPv6</p>
+</li>
+<li>
+<p><strong>Accesso alla rete:</strong> abbiamo Ethernet e altri che non vedremo</p>
+</li>
+</ul>
+<p><img alt="" src="../img/cap07/media/image5.jpg" /></p>
+<h5 id="applicazione">Applicazione<a class="headerlink" href="#applicazione" title="Permanent link">&para;</a></h5>
+<div class="admonition abstract">
+<p class="admonition-title">Definizione</p>
+<p>Il livello <strong>applicazione</strong> è quello più in alto nella pila, qui troviamo tutti i protocolli utilizzati dal software che vuole comunicare in rete.</p>
+</div>
+<p>Ogni software utilizza un suo protocollo, citiamo solo i più importanti:</p>
+<ul>
+<li>
+<p><strong>HTTP (HyperText Transfer Protocol):</strong> è il protocollo utilizzato dai <strong>browser</strong> per la navigazione delle pagine web. Ormai quasi sempre è sostituito da <strong>HTTPS</strong>, una versione crittografata dello stesso.</p>
+</li>
+<li>
+<p><strong>FTP (File Transfer Protocol):</strong> Protocollo per il <strong>trasferimento dei file</strong>, spesso usato per il download o upload di file su server.</p>
+</li>
+<li>
+<p><strong>SMTP, IMAP, POP3:</strong> Protocolli per invio e ricezione di <strong>email</strong></p>
+</li>
+<li>
+<p><strong>DNS:</strong> Protocollo per la comunicazione con i <strong>server DNS</strong> e conversione di nome di dominio in indirizzo IP</p>
+</li>
+<li>
+<p><strong>DHCP:</strong> Protocollo per la comunicazione con i server DHCP e assegnazione di indirizzi IP in maniera dinamica</p>
+</li>
+</ul>
+<p>Ogni software, con il suo protocollo applicativo, crea il messaggio che vuole inviare sulla rete e lo passa al livello di trasporto.</p>
+<h5 id="trasporto">Trasporto<a class="headerlink" href="#trasporto" title="Permanent link">&para;</a></h5>
+<div class="admonition abstract">
+<p class="admonition-title">Definizione</p>
+<p>Il livello di <strong>trasporto</strong> prende il messaggio creato dall'applicazione e lo <strong>divide in sezioni più piccole</strong> (dimensioni nell'ordine di grandezza del kilobyte) per prepararle all'invio.<br />
+A seconda del protocollo scelto (TCP o UDP) aggiunge informazioni per la gestione dell'invio e degli errori</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Sintassi - Nota</p>
+<p><strong>Nota:</strong> Spesso si fa riferimento alle sezioni create dal livello di trasporto come <strong>pacchetti</strong>, anche se tecnicamente si chiamano pacchetti solo dopo il livello di trasporto.<br />
+A questo livello si chiamano <strong>segmenti</strong> o <strong>datagrammi</strong> in base al protocollo.</p>
+</div>
+<!-- REVIEW: tipo di box da confermare -->
+
+<p>A questo livello abbiamo due protocolli: <strong>TCP</strong> e <strong>UDP</strong>.</p>
+<p><strong>TCP (Transmission Control Protocol)</strong> è un protocollo che effettua il controllo degli errori ed è utilizzato per ottenere trasmissioni <strong><u>affidabili.</u></strong></p>
+<p><strong>UDP (User Datagram Protocol)</strong> è un protocollo che non effettua alcun controllo degli errori ed è utilizzato per ottenere trasmissioni <u><strong>veloci</strong>.</u>  </p>
+<p>Nel dettaglio:</p>
+<div class="admonition info">
+<p class="admonition-title">Sintassi - TCP</p>
+<p><strong>TCP</strong> <strong>UDP</strong></p>
+<p>Stabilisce una <strong>connessione</strong> prolungata tra mittente e destinatario prima di iniziare la comunicazione<strong><br />
+</strong></p>
+<p>**  </p>
+<p>All'invio:**</p>
+<ul>
+<li>
+<p><strong>Divide</strong> il messaggio in sezioni chiamati <strong>segmenti</strong>, di lunghezza tra 500 e 1500 byte</p>
+</li>
+<li>
+<p>Gestisce il <strong>controllo degli errori</strong> e reinvia al destinatario eventuali pacchetti persi</p>
+</li>
+</ul>
+<p><strong>Alla ricezione:</strong></p>
+<ul>
+<li>
+<p><strong>Riordina</strong> i pacchetti che arrivano in ordine sparso</p>
+</li>
+<li>
+<p>Controlla se ci sono <strong>errori</strong> o pacchetti mancanti ed eventualmente richiede al mittente <strong>un nuovo invio</strong> dei pacchetti mancanti</p>
+</li>
+<li>
+<p>Invia al mittente una <strong>conferma di ricezione</strong></p>
+</li>
+</ul>
+<p>Non stabilisce una connessione prolungata tra mittente e destinatario prima di iniziare la comunicazione, ogni pacchetto arriva separatamente e indipendentemente dagli altri.</p>
+<p><strong>All'invio:</strong></p>
+<ul>
+<li><strong>Divide</strong> il messaggio in sezioni chiamati <strong>datagrammi</strong>, di lunghezza tra 500 e 1500 byte</li>
+</ul>
+<p><strong>Alla ricezione:</strong></p>
+<ul>
+<li><strong>Estrae</strong> i dati dal datagramma e li passa all'applicazione</li>
+</ul>
+<p><strong>N.B.</strong> Osserviamo che UDP non effettua controlli, non riordina, non richiede pacchetti persi.<br />
+<u>Non garantisce in alcun modo la correttezza della trasmissione</u></p>
+<p><strong>Pro:</strong></p>
+<ul>
+<li><strong>Garantisce accuratezza:<br />
+</strong>I dati inviati arrivano per certo e nell'ordine richiesto</li>
+</ul>
+<p><strong>Contro:</strong></p>
+<ul>
+<li><strong>Minore velocità:<br />
+</strong>Tutti i controlli sugli errori costano del tempo aggiuntivo che si perde durante la trasmissione</li>
+</ul>
+<p><strong>Pro:</strong></p>
+<ul>
+<li><strong>Maggiore velocità:<br />
+</strong>Non effettuando controlli di alcun tipo UDP è più tempestivo nella trasmissione dei dati</li>
+</ul>
+<p><strong>Contro:</strong></p>
+<ul>
+<li><strong>Nessuna accuratezza:<br />
+</strong>Non c'è garanzia di trasmissione: i dati potrebbero arrivare corrotti o non arrivare affatto</li>
+</ul>
+<p><strong>Casi di utilizzo:</strong></p>
+<p>Tutti i software per cui è fondamentale la <strong><u>completezza</u></strong> della trasmissione:</p>
+<p>browser, email, messaggistica, ecc…</p>
+<p><strong>Casi di utilizzo:</strong></p>
+<p>Tutti i software per cui è fondamentale la <strong><u>tempestività</u></strong> della trasmissione:</p>
+<p>chiamate e videochiamate, streaming live, videogiochi, ecc..</p>
+</div>
+<!-- REVIEW: tipo di box da confermare -->
+
+<div class="admonition abstract">
+<p class="admonition-title">Definizione</p>
+<p><strong>Risorsa video: confronto tra TCP e UDP<br />
+</strong>Video che, con ottima animazione, spiega bene le differenze tra i due protocolli di trasporto. Da guardare.<strong><br />
+</strong><a href="https://www.youtube.com/watch?v=uwoD5YsGACg"><u>TCP vs UDP Comparison</u></a></p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Definizione</p>
+<p><strong>Approfondimento - Le porte</strong></p>
+<blockquote>
+<p>Abbiamo già visto (e specificheremo meglio nel livello Internet) come tutte le trasmissioni arrivano a destinazione utilizzando l'indirizzo IP del destinatario.</p>
+<p><u>Sulla stessa macchina però sono in esecuzione <strong>diverse applicazioni</strong>.<br />
+</u>Come fanno i computer a capire a quale delle applicazioni aperte è indirizzata la trasmissione?</p>
+<p>Un esempio ancora più evidente è quando abbiamo <strong>due schede aperte</strong> dello stesso browser. Se in una scheda faccio richiesta della pagina www.google.it, quando la pagina mi viene inviata come fa il mio computer a distinguere qual è la scheda che ha fatto la richiesta?</p>
+<p>Per poter permettere a più applicazioni di sfruttare la stessa connessione (<strong>multiplexing</strong>) nel livello di trasporto entrano in gioco le <strong>porte di rete</strong></p>
+<p><strong>Le porte di rete</strong></p>
+<p>Quando un processo in esecuzione sul computer vuole comunicare in rete gli viene assegnato dal sistema operativo del computer una porta di comunicazione.</p>
+<p><strong>La porta è un numero da 0 a 65535 che viene assegnato ad un processo dal sistema operativo.</strong></p>
+<p><em>Esistono alcune porte standard (21 per FTP, 80 per HTTP, 443 per HTTPS,ecc..), altre sono a libera disposizione del sistema operativo.</em></p>
+<p>Quando quell'applicazione vuole trasmettere dei dati e manda una richiesta con TCP/IP, <strong>nel livello di trasporto viene aggiunto</strong> al segmento (o datagramma) il riferimento alla <strong>porta dell'applicazione</strong> a cui il dato è destinato.</p>
+<p><strong>TCP.</strong> Nello specifico per TCP, prima dell'invio effettivo dei dati, <strong>viene stabilita una connessione</strong> e vengono stabilite una coppia di porte, una nel pc del mittente e una del destinatario, che saranno occupate per tutto lo scambio di dati.</p>
+<p><strong>UDP.</strong> Per quanto riguarda UDP, non viene stabilita una connessione prolungata, quindi la porta rimane disponibile e in ascolto per ricevere dati anche da più sorgenti.</p>
+<p><strong>Risorsa video:<br />
+</strong><a href="https://www.youtube.com/watch?v=g2fT-g9PX9o&amp;ab_channel=PowerCertAnimatedVideos"><u>Network Ports Explained</u></a></p>
+</blockquote>
+</div>
+<h5 id="internet">Internet<a class="headerlink" href="#internet" title="Permanent link">&para;</a></h5>
+<div class="admonition abstract">
+<p class="admonition-title">Definizione</p>
+<p>Il livello <strong>internet</strong> prende i segmenti (o datagrammi) che arrivano dal livello di trasporto, vi aggiunge le informazioni necessarie all'indirizzamento (IPv4 o IPv6) e il risultato del processo sono i <strong>pacchetti</strong></p>
+</div>
+<p>Questo livello del processo è quello che si occupa di far sì che i pacchetti arrivino al suo destinatario. <u>Su questo livello operano i router</u>, che identificando l'ip nel pacchetto sono in grado di instradarlo verso la rete corretta.</p>
+<p>Nel livello di internet i protocolli disponibili sono IPv4 e IPv6</p>
+<div class="admonition info">
+<p class="admonition-title">Sintassi - IPv4</p>
+<p><strong>IPv4</strong> <strong>IPv6</strong></p>
+<p>Indirizzo IP composto da 32 bit.</p>
+<p><strong><br />
+L'indirizzo è rappresentato con 4 numeri da 0 a 255 separati da un .<br />
+</strong></p>
+<p><em>Esempio</em>:</p>
+<p>192.168.0.15</p>
+<p>Indirizzo IP composto da 128 bit</p>
+<p><strong>L'indirizzo è rappresentato con 8 numeri da quattro cifre esadecimali separato da :</strong></p>
+<p><strong><br />
+</strong><em>Esempio</em>:</p>
+<p>2001:0db8:85a3:0000:0000:8a2e:0370:7334</p>
+<p>**Numero di indirizzi disponibili:  </p>
+<p>**Con 32 bit abbiamo un numero di indirizzi IP pari a</p>
+<p><span class="math inline">2<sup>32</sup></span>=4.294.967.296**  </p>
+<p>Poco più di 4 miliardi di indirizzi IP.**</p>
+<p>Al mondo ci sono circa 8 miliardi di persone. Ci sono diverse tecniche per risparmiare indirizzi IP, ma anche così stiamo esaurendo. L'unica soluzione sarà passare a IPv6.</p>
+<p><strong>Numero di indirizzi disponibili:</strong></p>
+<p>Con 128 bit abbiamo un numero di indirizzi IP pari a <span class="math inline">2<sup>128</sup></span>, il cui risultato è difficile da scrivere. È un numero con 38 cifre.**  </p>
+<p>Svariati miliardi di miliardi di miliardi di….**</p>
+<p>Una quantità di indirizzi IP che sarà impossibile da esaurire.</p>
+</div>
+<!-- REVIEW: tipo di box da confermare -->
+
+<p>Con riferimento a IPv4, vediamo nel dettaglio come funziona un indirizzo IP.<br />
+In base alla grandezza della rete che si vuole creare si distinguono due parti dell'indirizzo IP: una parte che identifica la <strong>rete</strong>, una parte che identifica <strong>l'host</strong> all'interno della rete.</p>
+<p>Per stabilire quale parte dell'indirizzo IP indica la rete si utilizza la cosiddetta <strong>maschera di rete</strong></p>
+<div class="admonition abstract">
+<p class="admonition-title">Definizione</p>
+<p><strong>Maschere di rete e classi di indirizzi IP</strong></p>
+<blockquote>
+<p>La maschera di rete è una sequenza di quattro cifre da 0 a 255 separate da un punto. <u>Non vedremo le sottoreti</u>, ma vedremo soltanto le classi principali A,B,C:</p>
+</blockquote>
+<ul>
+<li>
+<p>Nel punto in cui troviamo 255 intendiamo che quella posizione nell'indirizzo IP è riservata alla rete</p>
+</li>
+<li>
+<p>Nel punto in cui troviamo 0 intendiamo che quella posizione nell'indirizzo IP è riservata all'host.</p>
+</li>
+</ul>
+<p><img alt="" src="../img/cap07/media/image11.png" /></p>
+<ul>
+<li>
+<p><strong>Classe A: 255.0.0.0,</strong> poche reti, di grandissime dimensioni (128 diverse reti, con circa 17 milioni di host ognuna)</p>
+</li>
+<li>
+<p><strong>Classe B: 255.255.0.0</strong> Organizzazioni di medie dimensioni (16384 diverse reti, con 65536 host ognuna)</p>
+</li>
+<li>
+<p><strong>Classe C: 255.255.255.0</strong> Reti di piccole dimensioni, tipicamente la maschera della rete locale (circa 2 milioni di diverse reti, con 256 host ognuna)</p>
+</li>
+</ul>
+<p>Vediamo degli esempi:</p>
+<blockquote>
+<p><strong>Classe A</strong>- con maschera di rete <strong>255</strong>.0.0.0, solo il primo numero identifica la rete, tutti gli host che condividono quel primo numero fanno parte della stessa rete.</p>
+</blockquote>
+<ul>
+<li>
+<p>Gli indirizzi IP <strong>100</strong>.1.2.3 e <strong>100</strong>.5.145.25 <strong>sono</strong> nella stessa rete perché condividono lo stesso primo numero</p>
+</li>
+<li>
+<p>Gli indirizzi IP <strong>95</strong>.5.145.25 e <strong>100</strong>.5.145.25 <strong>non sono</strong> nella stessa rete perché non condividono lo stesso primo numero</p>
+</li>
+</ul>
+<p><strong>Classe B</strong>- con maschera di rete <strong>255.255</strong>.0.0, i primi due numeri identificano la rete, tutti gli altri host fanno parte della stessa rete.</p>
+<ul>
+<li>
+<p>Gli indirizzi IP <strong>145.5</strong>.1.195 e <strong>145.5.</strong>145.25 <strong>sono</strong> sulla stessa rete perché condividono gli stessi primi due numeri.</p>
+</li>
+<li>
+<p>Gli indirizzi IP <strong>145.1</strong>.2.3 e <strong>145.5.</strong>145.25 <strong>non sono</strong> nella stessa rete perché <strong>non</strong> condividono gli stessi primi due numeri.</p>
+</li>
+</ul>
+<p><strong>Classe C</strong>- con maschera di rete <strong>255.255.255</strong>.0, i primi tre numeri identificano la rete, tutti gli altri host fanno parte della stessa rete. È la classica maschera di rete delle reti locali.</p>
+<ul>
+<li>
+<p>Gli indirizzi IP <strong>192.168.0</strong>.195 e <strong>192.168.0</strong>.25 <strong>sono</strong> sulla stessa rete perché condividono gli stessi primi due numeri.</p>
+</li>
+<li>
+<p>Gli indirizzi IP <strong>192.168.0</strong>.195 e <strong>192.168.1</strong>.25 <strong>non sono</strong> nella stessa rete perché <strong>non</strong> condividono gli stessi primi due numeri.</p>
+</li>
+</ul>
+<p><strong>Approfondimento: le subnet mask</strong></p>
+<p>Il concetto di classi di indirizzi IP è stato superato perché poco flessibile ed efficiente nella gestione delle reti.<br />
+Se ad esempio io avessi bisogno di due reti da 100 host, dovrei <em>'sprecare'</em> due reti di classe C, ognuna delle quali può tenere 256 host. Perdo l'assegnazione di quasi 300host.</p>
+<p>Tramite subnet mask possiamo dividere ulteriormente una rete di classe C in due reti più piccole.</p>
+<p>Non vedremo i dettagli, lascio un ottimo video di approfondimento</p>
+<p><a href="https://www.youtube.com/watch?v=s_Ntt6eTn94"><strong><u>Subnet Mask - Explained</u></strong></a></p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Definizione</p>
+<h6 id="importante-come-ipv4-risparmia-indirizzi-ip">Importante - Come IPv4 risparmia indirizzi IP<a class="headerlink" href="#importante-come-ipv4-risparmia-indirizzi-ip" title="Permanent link">&para;</a></h6>
+<p>Come abbiamo visto, con IPv4 abbiamo alpiù 4,3 miliardi di indirizzi IP. Se contassimo tutti i dispositivi (PC, smartphone, tablet, televisori, ecc..) connessi alla rete si arriverebbe facilmente a molto più di 4 miliardi.</p>
+<blockquote>
+<p><strong>Non possiamo permetterci di assegnare un indirizzo IP pubblico univoco ad ogni dispositivo.</strong></p>
+<p><strong>Indirizzi IP privati e indirizzi IP pubblici</strong></p>
+<p>Invece di assegnare un indirizzo IP pubblico ad ogni dispositivo, assegniamo un <u>unico indirizzo IP pubblico all'intera rete locale.<br />
+</u>All'interno della rete locale ogni dispositivo avrà un suo indirizzo <strong>IP privato</strong>, ma tutti i dispositivi nella rete locale condividono lo stesso <strong>IP pubblico.</strong></p>
+<p>Sarà il <a href="#router"><u>router</u></a>, tramite NAT (Network Address Translation) a fare la traduzione tra IP privato e IP pubblico.</p>
+<p><strong>Risorsa video:<br />
+</strong>Video che, con ottima animazione, spiega bene le differenze tra l'indirizzo IP di un dispositivo sulla rete locale (<strong>indirizzo privato</strong>) e l'indirizzo IP del dispositivo sulla rete internet (<strong>indirizzo pubblico</strong>)<strong><br />
+</strong><a href="https://www.youtube.com/watch?v=po8ZFG0Xc4Q&amp;ab_channel=PowerCertAnimatedVideos"><u>Public vs Private IP Address</u></a></p>
+</blockquote>
+</div>
+<h5 id="accesso-alla-rete">Accesso alla rete<a class="headerlink" href="#accesso-alla-rete" title="Permanent link">&para;</a></h5>
+<div class="admonition abstract">
+<p class="admonition-title">Definizione</p>
+<p>Il livello <strong>accesso alla rete,</strong> noto anche come livello fisico o collegamento dati, è quello in cui avviene la trasmissione dei dati vera e propria.</p>
+<p>A questo livello troviamo i protocolli di trasmissione dati delle diverse tecnologie.</p>
+</div>
+<p>Vediamo in un elenco puntato, senza approfondimento, alcuni dei protocolli:</p>
+<ul>
+<li>
+<p><strong>Ethernet:</strong> è il protocollo più diffuso nelle reti locali, per estensione il cavo utilizzato nelle trasmissioni con protocollo Ethernet viene chiamato cavo Ethernet.</p>
+</li>
+<li>
+<p><strong>Wi-Fi:</strong> più precisamente IEEE 802.11 seguito da diverse lettere in base alla versione utilizzata. Protocollo di trasmissione wireless su brevi distanze</p>
+</li>
+<li>
+<p><strong>ATM</strong> (Asynchronous Transfer Mode): tecnologia di rete che organizza i dati digitali in pacchetti di dimensioni fisse chiamate celle e trasmette su reti a banda larga.</p>
+</li>
+</ul>
+<h3 id="73-domande-di-comprensione">7.3. Domande di comprensione<a class="headerlink" href="#73-domande-di-comprensione" title="Permanent link">&para;</a></h3>
+<h4 id="domande-a-crocette_2">Domande a crocette<a class="headerlink" href="#domande-a-crocette_2" title="Permanent link">&para;</a></h4>
+<p><strong>1. Cosa si intende per "protocollo di comunicazione" in una rete?</strong></p>
+<p>A) Il tipo di cavo utilizzato per collegare i computer.</p>
+<blockquote>
+<p>B) La velocità massima di connessione a Internet.</p>
+<p>C) Un insieme di regole formali che definiscono come due o più dispositivi devono comunicare tra loro.</p>
+<p>D) Il software antivirus installato sui computer.</p>
+</blockquote>
+<p><strong>2. Qual è uno dei vantaggi principali nel dividere i dati da inviare in rete in pacchetti più piccoli?</strong></p>
+<p>A) Aumentare la sicurezza fisica della rete.</p>
+<blockquote>
+<p>B) Permettere più comunicazioni contemporanee</p>
+<p>C) Ridurre il numero di indirizzi IP necessari.</p>
+<p>D) Evitare l'uso del protocollo TCP.</p>
+</blockquote>
+<p><strong>3. Il modello TCP/IP, lo standard più usato su Internet, organizza la comunicazione in:</strong></p>
+<p>A) 7 livelli ben distinti, come il modello teorico ISO/OSI.</p>
+<blockquote>
+<p>B) Un unico livello che gestisce tutta la comunicazione.</p>
+<p>C) 2 livelli: uno per l'invio e uno per la ricezione.</p>
+<p>D) 4 livelli principali (Applicazione, Trasporto, Internet, Accesso alla rete) che collaborano in sequenza.</p>
+</blockquote>
+<p><strong>4. Quale livello del modello TCP/IP si occupa di prendere i dati dall'applicazione (es. browser o email) e dividerli in segmenti più piccoli, aggiungendo informazioni per la gestione della trasmissione (come le porte)?</strong></p>
+<p>A) Livello Internet</p>
+<blockquote>
+<p>B) Livello Accesso alla rete</p>
+<p>C) Livello Trasporto</p>
+<p>D) Livello Applicazione</p>
+</blockquote>
+<p><strong>5. Qual è la differenza fondamentale nel modo di operare tra il protocollo TCP e il protocollo UDP?</strong></p>
+<p>A) TCP è usato per connessioni wireless, UDP per quelle via cavo.</p>
+<blockquote>
+<p>B) UDP è più veloce ma non garantisce che tutti i dati arrivino correttamente e in ordine, mentre TCP è più lento ma affidabile perché controlla gli errori e l'ordine dei pacchetti.</p>
+<p>C) TCP usa indirizzi IPv6, UDP usa indirizzi IPv4.</p>
+<p>D) UDP serve per inviare file di grandi dimensioni, TCP solo per messaggi brevi.</p>
+</blockquote>
+<p><strong>6. In quale situazione è generalmente preferibile usare il protocollo UDP invece di TCP?</strong></p>
+<p>A) Per scaricare un file importante da un sito web, dove ogni singolo bit deve essere corretto.</p>
+<blockquote>
+<p>B) Per inviare una email, assicurandosi che il testo arrivi completo.</p>
+<p>C) Per una videochiamata o lo streaming live, dove la velocità e la tempestività sono più importanti della garanzia assoluta che ogni singolo pacchetto arrivi.</p>
+<p>D) Per la connessione a un database aziendale.</p>
+</blockquote>
+<p><strong>7. Il livello Internet del modello TCP/IP ha come compito principale:</strong></p>
+<p>A) Gestire la connessione fisica (cavi, Wi-Fi).</p>
+<blockquote>
+<p>B) Assicurarsi che i pacchetti arrivino senza errori e nel giusto ordine.</p>
+<p>C) Aggiungere l'indirizzo IP del destinatario ai dati per permettere l'instradamento dei pacchetti attraverso le reti.</p>
+<p>D) Fornire l'interfaccia per le applicazioni utente come i browser.</p>
+</blockquote>
+<p><strong>8. Quale delle seguenti affermazioni riguardo agli indirizzi IPv4 è corretta?</strong></p>
+<p>A) Ogni dispositivo connesso a Internet ha un indirizzo IPv4 pubblico univoco a livello mondiale.</p>
+<blockquote>
+<p>B) Gli indirizzi IPv4 sono esauriti, quindi non vengono più utilizzati su Internet.</p>
+<p>C) L'uso di indirizzi IP privati all'interno delle reti locali (LAN) e del NAT aiuta a risparmiare indirizzi IPv4 pubblici.</p>
+<p>D) Un indirizzo IPv4 è composto da 8 gruppi di cifre esadecimali.</p>
+</blockquote>
+<p><strong>9. Cosa identifica la "maschera di rete" (es. 255.255.255.0) in un indirizzo IPv4?</strong></p>
+<p>A) Il tipo di dispositivo (PC, smartphone, stampante) che si connette alla rete.</p>
+<blockquote>
+<p>B) La tipologia di porta fisica che il dispositivo offre per connettersi alla rete. Può prevedere uno o più connettori nella stessa scheda.</p>
+<p>C) Quale parte dell'indirizzo IP identifica la rete e quale parte identifica l'host all'interno di quella rete.</p>
+<p>D) Lo schema utilizzato dalle aziende produttrici per generare un indirizzo MA.</p>
+</blockquote>
+<p><strong>10. Quale dei seguenti protocolli opera tipicamente al livello Applicazione del modello TCP/IP?</strong></p>
+<p>A) TCP</p>
+<blockquote>
+<p>B) HTTP.</p>
+<p>C) IP</p>
+<p>D) Ethernet</p>
+</blockquote>
+<h4 id="domande-verofalso_2">Domande Vero/Falso<a class="headerlink" href="#domande-verofalso_2" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<p>Un protocollo di comunicazione è semplicemente il tipo di cavo usato per connettere due computer. <strong>V/F</strong></p>
+</li>
+<li>
+<p>Il modello ISO/OSI è quello effettivamente utilizzato oggi per tutte le comunicazioni su Internet, mentre TCP/IP è solo un modello teorico. <strong>V/F</strong></p>
+</li>
+<li>
+<p>Dividere i dati in pacchetti permette di inviare più cose contemporaneamente sulla stessa linea e, in caso di errore, di ritrasmettere solo il pacchetto sbagliato. <strong>V/F</strong></p>
+</li>
+<li>
+<p>Quando si inviano dati, il livello Applicazione del modello TCP/IP è l'ultimo ad essere eseguito, subito prima che i dati partano sul cavo o via Wi-Fi. <strong>V/F</strong></p>
+</li>
+<li>
+<p>Il protocollo UDP è preferibile a TCP quando è fondamentale che tutti i dati arrivino a destinazione senza errori e nello stesso ordine in cui sono partiti. <strong>V/F</strong></p>
+</li>
+<li>
+<p>Le "porte di rete" (numeri come 80 per HTTP o 443 per HTTPS) aiutano il computer a capire a quale specifica applicazione (tra le tante in esecuzione) sono destinati i dati ricevuti. <strong>V/F</strong></p>
+</li>
+<li>
+<p>Il livello Internet del modello TCP/IP si occupa di aggiungere l'indirizzo MAC del mittente e del destinatario ai pacchetti. <strong>V/F</strong></p>
+</li>
+<li>
+<p>Gli indirizzi IPv6 sono stati introdotti perché gli indirizzi IPv4 stavano finendo, e IPv6 offre un numero enormemente più grande di indirizzi possibili. <strong>V/F</strong></p>
+</li>
+<li>
+<p>La maschera di rete serve a capire se due indirizzi IP appartengono alla stessa rete locale o a reti diverse. <strong>V/F</strong></p>
+</li>
+<li>
+<p>Il protocollo Ethernet e il protocollo Wi-Fi operano al livello Trasporto del modello TCP/IP. <strong>V/F</strong></p>
+</li>
+</ol>
+<h4 id="domande-di-rielaborazione_2">Domande di rielaborazione<a class="headerlink" href="#domande-di-rielaborazione_2" title="Permanent link">&para;</a></h4>
+<p><u>Queste domande testano la vostra conoscenza e la vostra abilità di rielaborazione in un formato discorsivo, come potrebbe essere una domanda di un'interrogazione o una traccia di un esame di stato</u></p>
+<ol>
+<li>
+<p>Spiega cos'è un <strong>protocollo di comunicazione</strong> di rete e perché è fondamentale standardizzare le regole di comunicazione. Illustra il concetto di <strong>architettura a livelli</strong> (stratificazione), facendo riferimento ai modelli ISO/OSI e TCP/IP e spiegando i vantaggi di tale approccio.</p>
+</li>
+<li>
+<p>Descrivi il ruolo e le principali differenze tra i protocolli <strong>TCP e UDP</strong> nel livello di Trasporto del modello TCP/IP. Spiega in quali scenari applicativi è preferibile utilizzare TCP e in quali UDP, motivando la scelta in base alle caratteristiche di affidabilità e velocità.</p>
+</li>
+<li>
+<p>Illustra la funzione del <strong>livello Internet</strong> nel modello TCP/IP, soffermandoti sul ruolo dell<strong>'indirizzamento IP</strong>. Spiega brevemente le differenze tra IPv4 e IPv6 e perché si è reso necessario il passaggio a IPv6.</p>
+</li>
+<li>
+<p>Spiega il concetto di <strong>suddivisione dei dati in pacchetti per la trasmissione in rete</strong>. Quali sono i principali vantaggi derivanti da questa suddivisione rispetto all'invio di dati in un blocco unico?</p>
+</li>
+<li>
+<p>Descrivi le <strong>funzioni principali svolte dai 4 livelli del modello TCP/IP (Applicazione, Trasporto, Internet, Accesso alla rete)</strong> durante il processo di invio e ricezione di dati. Fornisci almeno un esempio di protocollo per ciascun livello (escluso Accesso alla rete).</p>
+</li>
+</ol>
+<p><strong>Risposte corrette. Evidenziare con il mouse per vedere le risposte</strong></p>
+<p><strong>Crocette</strong></p>
+<p><strong>1</strong>. C <strong>2</strong>. B <strong>3</strong>. D <strong>4</strong>. C <strong>5</strong>. B <strong>6</strong>. C <strong>7</strong>. C <strong>8</strong>. C <strong>9</strong>. C <strong>10</strong>. B</p>
+<p><strong>Vero/Falso:</strong></p>
+<ol>
+<li>
+<p><strong>Falso</strong> (Un protocollo è un insieme di regole per la comunicazione ).</p>
+</li>
+<li>
+<p><strong>Falso</strong> (È il contrario: TCP/IP è lo standard de facto di Internet, ISO/OSI è il modello di riferimento teorico ).</p>
+</li>
+<li>
+<p><strong>Vero</strong>.</p>
+</li>
+<li>
+<p><strong>Falso</strong> (Il livello Applicazione è il primo quando si inviano dati; l'ultimo è Accesso alla rete).</p>
+</li>
+<li>
+<p><strong>Falso</strong> (È TCP che garantisce affidabilità e ordine; UDP è veloce ma senza garanzie).</p>
+</li>
+<li>
+<p><strong>Vero</strong>.</p>
+</li>
+<li>
+<p><strong>Falso</strong> (Il livello Internet aggiunge gli indirizzi IP; gli indirizzi MAC sono usati a livelli più bassi, tipicamente nel livello Accesso alla rete per la consegna nella LAN).</p>
+</li>
+<li>
+<p><strong>Vero</strong>.</p>
+</li>
+<li>
+<p><strong>Vero</strong>.</p>
+</li>
+<li>
+<p><strong>Falso</strong> (Operano al livello Accesso alla rete, che gestisce la trasmissione fisica).</p>
+</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Torna su
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Piede" >
+        
+          
+          <a href="../capitolo-5/" class="md-footer__link md-footer__link--prev" aria-label="Precedente: Capitolo 5 - SQL">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Precedente
+              </span>
+              <div class="md-ellipsis">
+                Capitolo 5 - SQL
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.footer", "navigation.top", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiato", "clipboard.copy": "Copia", "search.result.more.one": "1 altro in questa pagina", "search.result.more.other": "# altri in questa pagina", "search.result.none": "Nessun documento trovato", "search.result.one": "1 documento trovato", "search.result.other": "# documenti trovati", "search.result.placeholder": "Scrivi per iniziare a cercare", "search.result.term.missing": "Non presente", "select.version": "Seleziona la versione"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
